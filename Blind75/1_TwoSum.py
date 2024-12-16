@@ -18,9 +18,9 @@ class Solution:
         return
 
 """
-Create an empty dictionary (hash table). 
+create an empty dictionary (hash table). 
 find the difference between the target value and the current number in the array. 
-Using the array given and the enumerate function iterate through the values and check if the diff variable is in the hash table. 
-If it is return, otherwise continue iterating, adding the value and index to the dictionary with each execution.
-This solution runs in O(n) linear time.
+using the array given and the enumerate function iterate through the values and check if the diff variable is in the hash table. 
+if it is return, otherwise continue iterating, adding the value and index to the dictionary with each execution.
+this solution runs in O(n) linear time.
 """
