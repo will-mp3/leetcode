@@ -38,4 +38,5 @@ this sorting also allows us to use pointers to later solve the problem.
 if we work with the formula a + b + c = 0, we can use a left and right pointer to transform this into a + l + r = 0.
 this will allow us to solve this problem by decreasing r when our result is greater than 0 
 or increasing l when our result is less than 0 (possible due to the sorting).
+this solution runs in O(n^2) quadratic time.
 """
