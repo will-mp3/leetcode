@@ -47,7 +47,7 @@ class Solution:
         return dfs(0)
 
 """
-to solve this problem we use dynamic programming and a recursive function.
+to solve this problem we use a recursive function.
 this basic approach is that given a string of ints to decode, we need to account for every combination of single and double digit values.
 these values can go up to 26, since we are letter decoding.
 this introduces a few edge cases, the first of which being if the string starts with zero, this cannot be since there is no 0th letter.
