@@ -46,6 +46,21 @@ class Solution:
         
         return dfs(0)
 
+class Solution2:
+    def numDecodings(self, s: str) -> int:
+        dp = { len(s) : 1 }
+
+        for i in range(len(s) - 1, -1, -1):
+            if s[i] == "0":
+                dp[i] = 0
+            else:
+                dp[i] = dp[i + 1]
+
+            if (i + 1 < len(s) and (s[i] == "1" or s[i] == "2" and s[i + 1] in "0123456")):
+                dp[i] += dp[i + 2]
+
+        return dp[0]
+
 """
 to solve this problem we use a recursive function.
 this basic approach is that given a string of ints to decode, we need to account for every combination of single and double digit values.
@@ -57,5 +72,6 @@ we then call dfs on i + 1 since we took the value at i as a single digit (this p
 we also have a second case where we take i as a double digit value and call dfs on i + 2.
 this can happen if theres enough length left in the string AND its less than 26.
 we return dfs(0) ultimately to return all the ways we can decode (every value is 1, so as the function runs it adds 1 for every valid index).
-this solution runs in O(n) linear time.
+solution 2 follows the same logic but uses a dynamic programming bottom up technique.
+this solution (solution2) runs in O(n) linear time.
 """
