@@ -30,7 +30,7 @@ The test cases are generated so that the answer fits in a 32-bit integer.
 
 class Solution:
     def numDecodings(self, s: str) -> int:
-        dp = { len(s) : 1 }
+        dp = { len(s) : 1 } # cache
 
         def dfs(i):
             if i in dp:
@@ -48,7 +48,7 @@ class Solution:
 
 class Solution2:
     def numDecodings(self, s: str) -> int:
-        dp = { len(s) : 1 }
+        dp = { len(s) : 1 } # cache
 
         for i in range(len(s) - 1, -1, -1):
             if s[i] == "0":
