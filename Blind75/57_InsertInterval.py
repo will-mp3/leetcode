@@ -29,5 +29,14 @@ class Solution:
         return res
 
 """
-
+this solution inserts the intervals using just one loop and a result array.
+the way it works is for every interval, three conditions are checked:
+first, is the largest value in our new interval smaller than the smallest value of the current interval?
+if true, add the new interval and add the rest of the intervals following to result, every further interval is larger and wont overlap.
+second, is the smallest value in the new interval larger and the largest value of the current interval?
+if true, add the current interval because it is behind the new interval but dont add the new interval yet, it could still overlap in the future.
+if neither of these are true, then our interval is overlapping and we must merge it with the current interval.
+we do this by replacing the new interval with the minimum and maximum of the new interval and current interval's points.
+if the first condition has not activated by the time the loop ends, append the new interval and return result.
+this solution runs in O(n) linear time.
 """
