@@ -41,5 +41,16 @@ class Solution:
 """
 the algorithm this solution will use is called union find, we could approach this problem using a visit set and a depth first search,
 but union find was made specifically for finding connected sets.
-
+the way this code works is first we declare two arrays, one of the parent nodes (which start initially as themselves)
+and one with the rank of the nodes.
+the rank arrays purpose is to track essentially how many nodes a parent has connected to it and allow for future connections.
+this is purely for optimization and makes our nodes into more of a tree shape than a list.
+once these arrays are created we create two methods, find and union.
+the purpose of find is to search for a parent node, once found its returned.
+using passed in edges, this will search for the parent nodes of all nodes and return them, useful in the next function.
+the purpose of union is to perform the actual union of nodes and return 1 once finished.
+find is run on the edge passed in and checks if the parent is different.
+if the parent is the same, no union is needed and zero is returned.
+if the parent are different, union is carried out based on rank and 1 is returned.
+the values serve to decrement our result, starting at n, by 1 with each union.
 """
