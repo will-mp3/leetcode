@@ -26,5 +26,11 @@ class Solution:
         return list(res.values())
 
 """
-
+for this problem we make use of a hash map to keep track of our anagrams.
+we start by initializing our result map, this is what will hold our anagrams.
+next we go through each given string, for each string we map the count of its characters to an array and use it as a key.
+to do this we create an array of length 26 and use ascii calculations to increment the correct indices based on character.
+once this string identifying array is complete we use it as a key in our result array.
+for example "cat" would have an array key of [1,0,1,.....,1] (final one is in the t index), a word like tac would share the same array key.
+we add this key and its strings that correspond and return.
 """
