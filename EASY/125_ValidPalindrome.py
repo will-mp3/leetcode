@@ -21,5 +21,5 @@ class Solution:
 this solution is very simple.
 our approach is to reformat the given string, removing all non alphanumerial values and making every character lowercase.
 once done we simply check if our new string is equal to its reversed self.
-this solution runs in O(n) linear time
+this solution runs in O(n) linear time.
 """
