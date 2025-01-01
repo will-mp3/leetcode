@@ -28,5 +28,13 @@ class Solution:
         return res
 
 """
-
+the solution to this problem is nearly identical to that of problem 5.
+the way we handle palindromes is through pointers that expand from a middle value.
+note we have handling for both odd and even palindromes, though the logic is practically identical.
+we go through each charcater in s, setting our left and right pointers to that character (if targetting odd) 
+or to the character and its neighbor (if targetting even).
+once our pointers are set we check if their inbounds and equal each other.
+if both conditions are true then we have found a palindrome, increment result and shift the pointers outward.
+note that single characters are considered palindromes.
+this solution runs in O(n^2) quadratic time.
 """
