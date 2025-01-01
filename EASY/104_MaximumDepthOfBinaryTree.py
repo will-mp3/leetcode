@@ -10,7 +10,7 @@ class TreeNode:
         self.val = val
         self.left = left
         self.right = right
-        
+
 class Solution:
     def maxDepth(self, root: Optional[TreeNode]) -> int:
         if not root:
@@ -19,5 +19,10 @@ class Solution:
         return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right))
 
 """
-
+to solve this problem most efficiently we use a recursive depth first search function.
+in fact, we dont even need to create a new function as we can use the one given to use.
+all we do is first check the edge case for when there is no root (empty tree).
+then we return 1 + the max of this same function on our (potential) two leaf nodes.
+how it works is we continue to go down the tree as long as a leaf node exists somewhere and repeatedly add 1 when thats the case.
+this solution runs in O(n) linear time.
 """
