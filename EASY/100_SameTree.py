@@ -22,5 +22,8 @@ class Solution:
         return (self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right))
 
 """
-
+this problem expands upon simple tree traversal, we use the same method of recursive depth first search to solve.
+we start by checking our base cases, if the nodes are both empty we return true by default and if the nodes are not equal we return false.
+if neither of these execute we go to our recursive step which is calling this same function on the left and right children of the current nodes.
+ultimately we want our function to return True if they match and if they every dont match the function will evealuate to False.
 """
