@@ -55,5 +55,15 @@ class Codec:
         return res
 
 """
-
+this solution requires two function definitions, the main goal is to find a way to encode strings to be decoded later.
+the principle we follow is we need to have a way to know how many letters are in each string, 
+but we also have to account for potential integers and symbols in those strings.
+to accomplish this we encode our strings using a combination key of both integers and sumbols.
+we use a pound symbol as our delimiter, which follows our integer character count.
+encoding strings this way is easy, simple string concatenation, however decoding is more tricky.
+to decode, we go through our now encoded string character by character, i is our start point and j is our manipulated pointer.
+when we come across our delimiter, we know that the values between our start, i, and our position, j, contains the integer value.
+we take this value and convert it to an int and then take that many characters and insert them as a string into our array.
+example: 10#ridiculous - i would be at 1 and j would be at #, so our integer is 10.
+we then update i to be at the end of this now decoded string and continue.
 """
