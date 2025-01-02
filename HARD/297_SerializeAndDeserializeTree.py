@@ -54,5 +54,17 @@ class Codec:
         return dfs()
 
 """
-
+this solution is broken up into two functions, one that serializes a tree and one that deserializes.
+all this basically means is one encodes a tree into a string and one turns that string back into the original tree.
+our serialize function is the most simple, the basis is we are serializing our tree by using null leaves as our condition.
+we set these equal to "N" and return our dfs function when a null leaf is ecountered.
+our dfs function appends the value at non null nodes to our result array and then calls the dfs recursively on its two children.
+we go about this using depth first search and preorder traversal, so we start with the left side and then go to the right.
+our result array could look something like [1, 2, N, N, 3, 4, N, N, 5, N, N] where nodes 2, 4, and 5 have no children.
+our deserialize function uses the same depth first search and preorder approach to tranform this string.
+the first thing we do is strip the commas from our string, turning it into an ununterrupted string of characters.
+once thats done we call our recursive depth first search function, this uses the saved N characters as a condition to return.
+if an N isnt encountered we make a new node using the current character valuse and call dfs on its children.
+similarly to above we call left first since it needs to be decoded in a preorder manner.
+once all said and done we return dfs() which calls itself and builds our tree to be returned.
 """
