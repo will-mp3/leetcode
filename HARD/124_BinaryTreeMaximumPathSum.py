@@ -13,7 +13,7 @@ class TreeNode:
         self.val = val
         self.left = left
         self.right = right
-        
+
 class Solution:
     def maxPathSum(self, root: Optional[TreeNode]) -> int:
         res = [root.val]
@@ -39,5 +39,17 @@ class Solution:
         return res[0]
 
 """
-
+this solution makes use of a recursive depth first search algorithm.
+its important to note we are looking for paths, meaning there can be no branches.
+this could either contain just one side of the tree or a single split, but no more than one split may be included.
+the way it works if our recursive function, which receives a node (starting at the root), searches all the nodes in the tree for their values.
+the function is called all the way down the tree, where we begin computing the maximum value.
+our max is stored in our global variable res[], 
+and each time our function is called we calculate the max value of our node with or without a split.
+we update result so see if our max path includes this node as our pivot (the path splits on this node), 
+and if not we return our roots value plus the max path (left or right).
+this continues until we've checked every position.
+ultimately, we will have checked every node as a pivot point (split) and as a path, finding the maximum path overall by combining these pieces.
+note we handle negative numbers by zeroing them, this equates to excluding them all together.
+this solution runs in O(n) linear time.
 """
