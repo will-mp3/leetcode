@@ -14,7 +14,7 @@ class TreeNode:
         self.val = val
         self.left = left
         self.right = right
-        
+
 class Solution:
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
         
@@ -33,5 +33,15 @@ class Solution:
         return valid(root, float("-inf"), float("inf"))
 
 """
-
+this problem tasks us with checking to see if a tree is valid or not, i.e. is it correctly balanced.
+to do this we use a recurisve depth first search approach.
+our logic is based on a recursive helper function which utilizes left and right boundaries to check validity.
+each time the function is called it checks if the node is between the left and right boundaries passed in.
+if it is, the function continues calling itself.
+our boundaries start at negative and positive infinity, and update as we call the function.
+when we traverse left, we keep our left boundary the same and update our right boundary to be the parents value.
+this is because we must be less than the parent value but our minimum will remain the same.
+when we traverse right we do the opposite, since we must be greater than the parent value and our maximum does not change.
+this logic continues with every child until the tree is proven invalid or runs to completion.
+this solution runs in O(n) linear time.
 """
