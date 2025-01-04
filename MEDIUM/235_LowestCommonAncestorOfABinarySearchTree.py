@@ -26,5 +26,10 @@ class Solution:
                 return cur
 
 """
-
+this problem tasks us with finding the lowest common ancestor for two nodes p and q.
+the lowest common ancestor is the node farthest down the tree from which both p and q can still be reached.
+conditions for a node to be the LCA are if p and q split at this node OR this node is equal to p or q.
+to solve this problem we simply go down the tree until p and q split or equal the current node.
+once we reach one of those conditions we return the node.
+this solution runs in O(logn).
 """
