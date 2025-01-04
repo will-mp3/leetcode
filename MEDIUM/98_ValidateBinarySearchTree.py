@@ -33,7 +33,7 @@ class Solution:
         return valid(root, float("-inf"), float("inf"))
 
 """
-this problem tasks us with checking to see if a tree is valid or not, i.e. is it correctly balanced.
+this problem tasks us with checking to see if a tree is valid or not, i.e. is it correctly sorted.
 to do this we use a recurisve depth first search approach.
 our logic is based on a recursive helper function which utilizes left and right boundaries to check validity.
 each time the function is called it checks if the node is between the left and right boundaries passed in.
