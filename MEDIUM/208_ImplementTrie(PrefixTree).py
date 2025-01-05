@@ -54,5 +54,16 @@ class Trie:
         return True
 
 """
-
+a trie is a form of tree that handles strings, and specifically their prefixes.
+our trie needs to be able to insert words, search for words, and search for prefixes.
+the basic logic of the tree is each node will have a dictionary of children, this will allow us to quickly acces which children it may have.
+the reason this is necesary is each node can have up to 26 children, lowercase a-z.
+when we create a node we also give it a variable endOfWord to track if its the end of a word, useful later.
+to insert a word we check to see if the current character is a child of our current node, if not we create a new node for that character.
+once the entire word has been added, using existing nodes or new nodes, we set its last character nodes endOfWord variable to True.
+to search for a word we begin at the root and check the children for our current letter, if it is ever not present we return false.
+if the current letter is present we set cur equal to that node and continue.
+this checks to see if we have all the letters present in order, in our tree.
+once finished we have to last check if that final character is marked as the end of the word.
+the startsWith function, or prefix search, has identical logic to search except it dosent check for endOfWord.
 """
