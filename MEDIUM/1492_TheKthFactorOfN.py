@@ -21,5 +21,12 @@ class Solution:
         return factors[k - 1]
 
 """
-
+this problem asks us to find the kth factor of a given integer.
+to solve this problem, we must find a way to compile the factors of int n into a last of sorts.
+to do this, we intialize a result list as well as a variable x, x will be used to find the factors of n.
+we loop while x is less than n, each time moding x by n and checking if it equals zero.
+if n % x == 0, then we know that n is divisible by x, and x is a factor.
+once the loop completes, we check to see if there are atleast k factors in our array, if not we return -1.
+otherwise, we return the kth index of our array.
+this solution runs in O(n) linear time.
 """
