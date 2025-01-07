@@ -49,5 +49,16 @@ class MedianFinder:
         return (-1 * self.small[0] + self.large[0]) / 2
 
 """
-
+note: the logic for this code is rather complex, I have added a profuse amount of comments in place of a code explanation here.
+this problem asks us to find the median of an array, the catch is numbers continually get added.
+we want to find an implementation that runs better than a brute force sorting algorithm.
+assuming we used in order sort, each insertion would be O(n), which is fine, but we can do better.
+instead, we use min and max heaps to sort our data, this keeps our insertions in O(logn), which is the main allure of this method.
+the conceptual logic is we have a min heap and a max heap which are kept equal in length.
+this allows us to be able to grab the first value of the min heap and the first value of the max heap, 
+and have those values always be the middle two values.
+imagine we have a min heap of [3, 4] and a max heap of [1, 2], we know the median is 3 and 2 divided by 2.
+if we continue to keep our heaps the same size, we can always gather these two values using min[0] and max[0].
+conversely, if the length differs by 1, we simply return the first value of whichever heap is longer.
+this value is guranteed to be the middle value.
 """
