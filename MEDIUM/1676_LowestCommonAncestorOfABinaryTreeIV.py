@@ -50,5 +50,23 @@ class Solution:
             return None
 
 """
-
+this problem asks that we find the lowest common ancestor for a list of nodes in a tree.
+what makes this problem different and notably more difficult than others is that the tree is in no particular order,
+and we may have more than two nodes, or less than two nodes.
+the way this problem is solved is through a recursive depth first search function, aiming to find the earliest target node.
+once a target node is found, we can instantly start to evaluate our LCA, since we know theres no need to traverse any deeper under that node.
+we start by initializing a set called target which contains all of our target nodes.
+we create our depth first search function, which starts with our two conditionals.
+the first one checks if the root node thats been passed in in our target set, if so we return our root node.
+this will get saved or returned depending on the progress of our dfs function.
+the next conditional checks if the root node passed in is null, if so we return null.
+this symbolizes the end of our tree and/or an empty tree.
+if neither of these conditions activate, we call dfs on our left child, saving its return value to variable left.
+after that, we do the same for the right child, saving it to variable right.
+depending on the return values, we will either return the left child of our root node, right child of our root node, or root node itself.
+because we are activating on the earliest seen target node, our options are as follows:
+all of the target nodes are in the left child's tree, right has returned no targets, we return left.
+all of the target nodes are in the right child's tree, left has returned no targets, we return right.
+both right and left have returned a target, therfore there are targets in both children, meaning the root is the LCA, return root.
+this solution runs in O(n) linear time.
 """
