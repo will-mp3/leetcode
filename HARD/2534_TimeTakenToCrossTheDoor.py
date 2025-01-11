@@ -30,34 +30,39 @@ class Solution:
         # loop while there are still people arriving, or either queue exists
         while i < len(arrival) or enterQ or exitQ:
 
+            # fill queues with arriving people at this current second
             while i < len(arrival) and arrival[i] <= time:
 
-                if state[i] == 0:
+                if state[i] == 0: # if state is zero, queue them to enter
                     enterQ.append(i)
-                else:
+                else: # if state is 1, queue them to exit
                     exitQ.append(i)
                 i += 1
 
-            if prev_state == 1:
-                if exitQ:
+            if prev_state == 1: # if previous person exited
+                if exitQ: # let all queued to exit
                     res[exitQ.popleft()] = time
-                elif enterQ:
+                elif enterQ: # let all queued to enter
                     res[enterQ.popleft()] = time
                     prev_state = 0
 
-            else:
-                if enterQ:
+            else: # if previous person entered
+                if enterQ: # let all queued to enter
                     res[enterQ.popleft()] = time
-                elif exitQ:
+                elif exitQ: # let all queued to exit
                     res[exitQ.popleft()] = time
                     prev_state = 1
-                else:
+                else: # no one in queue, set state to 1 to account for default exit priority
                     prev_state = 1
 
-            time += 1
+            time += 1 
         
         return res
 
 """
-
+Use two deques to store all people entering and exiting before current time. 
+Use a prev_state to record the previous state and update prev_state, time and res once a person passes the door.
+our enter and exit rules dictate that if the door was not used in the previous second, exit gets priority.
+if enter was used in the previous second, enter gets priority (same applies to exit by default).
+our solution uses two loops, the overarching while loop runs so long as there are still people arriving or either queue exists.
 """
