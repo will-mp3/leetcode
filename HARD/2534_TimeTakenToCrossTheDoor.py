@@ -65,4 +65,11 @@ Use a prev_state to record the previous state and update prev_state, time and re
 our enter and exit rules dictate that if the door was not used in the previous second, exit gets priority.
 if enter was used in the previous second, enter gets priority (same applies to exit by default).
 our solution uses two loops, the overarching while loop runs so long as there are still people arriving or either queue exists.
+the nested while loop fills each deque at the current time.
+once the dequeues are filled we check for state. 
+note that state is 1 by default since exiters are given priority if no one has used the door in the last second.
+if state is 1, we let those exiting in first, then entering, and update state to 0 (last use was entering).
+if state is 0, we let those entering first, then exiting, and update state to 1 (last use was exiting).
+note that unlike the first if block, we have an else to update state to 1 if the queue is empty,
+this symbolizes a gap in people allowing us to reset to our exit priority default.
 """
