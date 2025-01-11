@@ -19,7 +19,44 @@ Only one person can cross the door at each second.
 A person may arrive at the door and wait without entering or exiting to follow the mentioned rules.
 """
 
+class Solution:
+    def timeTaken(self, arrival: List[int], state: List[int]) -> List[int]:
+        enterQ, exitQ = deque(), deque()
+        time = 0
+        prev_state = 1
+        i = 0
 
+        res = [0 for n in range(len(arrival))]
+        # loop while there are still people arriving, or either queue exists
+        while i < len(arrival) or enterQ or exitQ:
+
+            while i < len(arrival) and arrival[i] <= time:
+
+                if state[i] == 0:
+                    enterQ.append(i)
+                else:
+                    exitQ.append(i)
+                i += 1
+
+            if prev_state == 1:
+                if exitQ:
+                    res[exitQ.popleft()] = time
+                elif enterQ:
+                    res[enterQ.popleft()] = time
+                    prev_state = 0
+
+            else:
+                if enterQ:
+                    res[enterQ.popleft()] = time
+                elif exitQ:
+                    res[exitQ.popleft()] = time
+                    prev_state = 1
+                else:
+                    prev_state = 1
+
+            time += 1
+        
+        return res
 
 """
 
