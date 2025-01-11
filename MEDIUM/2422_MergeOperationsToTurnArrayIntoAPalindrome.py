@@ -15,22 +15,18 @@ class Solution:
 
         while l < r:
             if nums[l] > nums[r]:
-                tmp = nums[r]
+                tmp = nums[r] # create tmp variable, index r is about to change
                 r -= 1
-                nums[r] += tmp
+                nums[r] += tmp # add tmp to the value at new index r
                 res += 1
             elif nums[l] < nums[r]:
-                tmp = nums[l]
+                tmp = nums[l] # create tmp variable, index l is about to change
                 l += 1
-                nums[l] += tmp
+                nums[l] += tmp # add tmp to the value at new index l
                 res += 1
             else:
-                tmp = nums[l]
                 l += 1
-                nums[l] += tmp
-                tmp = nums[r]
                 r -= 1
-                nums[r] += tmp
 
         return res
 
@@ -43,6 +39,6 @@ if left is greater than right, we know we have to merge the right values and inc
 we save the current r value in a tmp variable, then decrement r and add the new r value with our tmp variable.
 if left is less than right, we merge left values and increment res.
 we save the current l value in a tmp variable, then increment l and add the new l value with our tmp variable.
-if left and right are equal then we perform both of the above operations without incrementing our result.
+if left and right are equal then we just update our pointers and continue.
 this solution runs in O(n) linear time.
 """
