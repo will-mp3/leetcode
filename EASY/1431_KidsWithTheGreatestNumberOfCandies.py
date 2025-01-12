@@ -23,5 +23,12 @@ class Solution:
         return res
 
 """
-
+this problem is very straightforward.
+to start, we need to find what the max candy value is since we will have to compare it later.
+we initialize an empty result array and iterate through all of the values in our candies list.
+for each value, we check if the value plus the extra candies value is greater than or equal to our max candies value.
+if true, we append True to our result list.
+if false, we append False to our result list.
+we then return the boolean list.
+this solution runs in O(n) linear time.
 """
