@@ -32,5 +32,7 @@ next we search our array starting from the left (default) and find the index of 
 we then take this value and shift it to the front, we update nums to be the minimum value, everything before it, and everything after it.
 we then search our array from the right to find our maximum value.
 to do this effectively, we reverse our array and search as we did for the left value.
-this method of searching gets us that distance we were looking for while avoiding 
+this method of searching gets us that distance we were looking for while avoiding unnecesary math.
+we then return the sum of our minimum and maximum indices (distance from left and distance from right).
+this solution runs in O(n) linear time. 
 """
