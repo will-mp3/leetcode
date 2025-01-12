@@ -9,7 +9,18 @@ they will have the greatest number of candies among all the kids, or false other
 Note that multiple kids can have the greatest number of candies.
 """
 
+class Solution:
+    def kidsWithCandies(self, candies: List[int], extraCandies: int) -> List[bool]:
+        maxCandy = max(candies)
+        res = []
 
+        for i in range(len(candies)):
+            if candies[i] + extraCandies >= maxCandy:
+                res.append(True)
+            else:
+                res.append(False)
+
+        return res
 
 """
 
