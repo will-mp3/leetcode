@@ -13,7 +13,21 @@ Given a string s, return the minimum number of keypresses needed to type s using
 Note that the characters mapped to by each button, and the order they are mapped in cannot be changed.
 """
 
+import collections
 
+class Solution:
+    def minimumKeypresses(self, s: str) -> int:
+        freq = collections.Counter(s) # store the frequencies of each value
+        frequencies = sorted(freq.values(), reverse=True) # sort value frequencies
+
+        res, count = 0, 0
+        # iterate through our ordered frequencies
+        for i, j in enumerate(frequencies):
+            if i % 9 == 0: # if we get to another multiple of 9 (0, 9, 18, ...) add 1 to counter
+                count += 1
+            res += j * count
+
+        return res
 
 """
 
