@@ -18,7 +18,7 @@ class Solution:
 
         for i in range(len(words) - 1):
             w1, w2 = words[i], words[i + 1] # adjacent words
-            minLen = min(len(w1), len(w2))
+            minLen = min(len(w1), len(w2)) # find min length
             if len(w1) > len(w2) and w1[:minLen] == w2[:minLen]: # third mentioned base case
                 return "" 
             for j in range(minLen):
