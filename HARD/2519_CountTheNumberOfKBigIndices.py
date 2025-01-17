@@ -8,7 +8,16 @@ There exist at least k different indices idx2 such that idx2 > i and nums[idx2] 
 Return the number of k-big indices.
 """
 
-
+class Solution:
+    def kBigIndices(self, nums: List[int], k: int) -> int:
+        lo = SortedList()
+        hi = SortedList(nums)
+        ans = 0 
+        for x in nums: 
+            if lo.bisect_left(x) >= k and hi.bisect_left(x) >= k: ans += 1
+            lo.add(x)
+            hi.remove(x)
+        return ans
 
 """
 
