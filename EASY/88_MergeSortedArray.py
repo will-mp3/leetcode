@@ -28,5 +28,14 @@ class Solution:
                 p2 -= 1
 
 """
-
-"""
+for this solution, we approach using two pointers, p1 and p2.
+to solve this problem using minimal memory as well as time, we start by modifying nums1 from the end where there is empty data.
+p1 represents nums1, so we initialize it to n - 1 and p2 represents nums2 so we initialize it to m - 1.
+we iterate through the total length of nums1, m + n - 1, backwards.
+each time we first check to see if p2 has any values, if not we break the loop.
+after that we check two conditions, is the value at p1 greater than that at p2 or is the value at p2 greater than that at p1.
+if the former is true, we add nums1[p1] to the current index in the greater nums1 array (nums1[p]).
+if the latter is true, we add nums2[p2] to the current index.
+each time one of these conditions is found to be true, we decrement the associated pointer.
+this solution runs in O(n + m) linear time and has a space complexity of O(1).
+""" 
