@@ -14,7 +14,24 @@ Do not allocate extra space for another array.
 You must do this by modifying the input array in-place with O(1) extra memory.
 """
 
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        i, j = 1, 1
+        count = 1
 
+        for i in range(1, len(nums)):
+            if nums[i] == nums[i - 1]:
+                count += 1
+            
+                if count > 2:
+                    continue
+            
+            else:
+                count = 1
+            nums[j] = nums[i]
+            j += 1
+
+        return j
 
 """
 
