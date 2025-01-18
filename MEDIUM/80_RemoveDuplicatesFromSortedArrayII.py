@@ -34,5 +34,13 @@ class Solution:
         return j
 
 """
-
+for this problem, we need to modify nums in place so that the first k elements have no more than 2 duplicates.
+to accomplish this, we use two pointers, i and j, where i iterates over the array and j tracks the position of our next insertion.
+we also initiate a counter, count, to keep track of the current number of duplicates.
+we iterate over the entire array, starting at index 1.
+each iteration we check to see if the current element is a duplicate of the previous, if so we increment count by 1.
+if this condition is evaluated to be true and count becomes greater than 2 we skip to the next iteration so as to leave j in place.
+if the current element is unique, we set count to 1 to symbolize this.
+every iteration where count is less than or equal to 2 we set position j to the element at position i and increment j.
+this solution runs in O(n) linear time.
 """
