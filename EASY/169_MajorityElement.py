@@ -17,5 +17,9 @@ class Solution:
 
 """
 to solve this problem we make use of a hash map (dictionary) to track the occurances of each value.
-for each 
+for each element in nums, we update its key in our hashmap.
+to do this we use the get operator, we add 1 to either the current value at that key or 0 (if the key dosent exist yet).
+while the loop runs we continuously check to see if our current number has passed the majority threshold.
+if it has, return that number.
+this solution runs in O(n) linear time.
 """
