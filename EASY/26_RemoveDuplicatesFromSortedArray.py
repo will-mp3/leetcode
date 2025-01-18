@@ -22,5 +22,14 @@ class Solution:
         return j
 
 """
-
+this problems solution is extremely similar to LeetCode 27, we must rewrite our array nums so as to remove all duplicates.
+the way we accomplish this is by using two pointers, one pointer as our insertion point and one for iteration.
+our insertion pointer will increment every time our iteration pointer finds no duplicates.
+our iteration pointer (i) checks to see if itself and the previous elemtn are equal to identify duplicates.
+if no duplicate is found, the element at i is copied to our current insertion index j.
+if a duplicate is found, our insertion index remains since we know the current value must be overwritten at some point.
+for example, if there are three "4"s in a row, our insertion index will stop on that second four, waiting until i finds a value that is not 4.
+once i finds a value that is not 4, it copies it to the insertion position (the second 4).
+note that we are returning k, the number of non duplicate values.
+this solution runs in O(n) linear time.
 """
