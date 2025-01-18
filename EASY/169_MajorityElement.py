@@ -10,14 +10,12 @@ class Solution:
         elements = {}
 
         for i in range(len(nums)):
-            if nums[i] in elements:
-                elements[nums[i]] += 1
-            else:
-                elements[nums[i]] = 1
+            elements[nums[i]] = 1 + elements.get(nums[i], 0)
             
             if elements[nums[i]] >= len(nums) // 2 + 1:
                 return nums[i]
 
 """
-
+to solve this problem we make use of a hash map (dictionary) to track the occurances of each value.
+for each 
 """
