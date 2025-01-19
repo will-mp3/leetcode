@@ -18,7 +18,29 @@ The path must not have any single or double periods ('.' and '..') used to denot
 Return the simplified canonical path.
 """
 
+class Solution:
+    def simplifyPath(self, path: str) -> str:
+        # initialize stack
+        stack = []
 
+        # split the input on "/" as the delimiter
+        for x in path.split("/"):
+            # if current portion is .., pop from our stack to symbolize moving up a directory
+            if x == "..":
+                if stack:
+                    stack.pop()
+
+            # if current portion is . or empty we dont do anything, next iteration
+            elif x == "." or not x:
+                continue
+
+            # if none of the above condition execute, its a legitimate directory name
+            else:
+                stack.append(x)
+
+        # stitch stack together
+        resStr = "/" + "/".join(stack)
+        return resStr
 
 """
 
