@@ -43,5 +43,18 @@ class Solution:
         return resStr
 
 """
-
+this problem is perfectly suited for a stack to be used.
+we see that we are checking a string, which could be done using any data structure in theory.
+what makes this problem so alluring for a stack is the layered nature of a directory, especially when dealing with "..".
+we are able to add what we want to the stack, pop when we need to move up a directory, and stitch our final product.
+we start by initializing our stack object.
+we then split our input string using "/" as a delimiter so as to isolate the specific directories.
+for each element in our split string, we check to see if its "..", if this is the case we know this represents the parent directory.
+when this is the case, we check to see if the stack is not null, and if it isnt we pop from the stack.
+this brings is back a level to the parent directory in question.
+next we check for ".", which represents the current directory.
+if a . is found, we do nothing and move to the next element since this dot is redundant in the simplified path.
+if neither of these conditions execute then we know we have found a valid directory and push it to the stack.
+by the end we stitch together the contents of our stack and return the new string.
+this solution runs in O(n) linear time.
 """
