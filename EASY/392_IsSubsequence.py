@@ -18,5 +18,14 @@ class Solution:
         return l == len(s) # if left pointer equals the length of s, we know we have found all chars
 
 """
-
+so solve this problem I make use of the two pointer method, however this does not utilize any sliding window techniques.
+we have our left and right pointers, however these names are slightly misleading.
+left is assigned to our source string s, and right is assigned to our target string t.
+while both of our pointers are in bounds, we iterate through our two strings.
+we check to see if our pointers indicate a match, that is s[l] == t[r].
+if a match is found we can shift our left pointer, regardless of this we mshift our right pointer.
+at some point this loop will break, either pointer will go out of bounds or perhaps both will.
+if the left pointer has gone our of bounds we know that we have found a match for all characters in our source string.
+we return the boolean value of this condition.
+this solution runs in O(n) linear time.
 """
