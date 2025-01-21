@@ -6,10 +6,10 @@ class Solution:
     def rotate(self, nums: List[int], k: int) -> None:
         # solution for O(n) time, O(n) space
         n = len(nums)
-        a = [0] * n
+        a = [0] * n # initialize empty array
 
         for i in range(n):
-            a[(i + k) % n] = nums[i]
+            a[(i + k) % n] = nums[i] # use modular indexing since we are rotating cyclically
 
         nums[:] = a
 
