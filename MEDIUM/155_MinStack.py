@@ -39,5 +39,17 @@ class MinStack:
         return self.stack[-1][1] # top elements min
 
 """
-
+this solution requires us to implement a stack, which is easy enough using arrays, with an added twist of also tracking the minimum value.
+this problem wouldnt be so difficult if it werent for the pop function, potentially removing our min value.
+to account for this, each pushed value will also be accompanied by its minimum value in the stack below it, whether that be itself or another.
+when we push an element, we first check to see if the stack is empty.
+if thats the case we know the value being pushed is the minimum so we append the pair (val, val).
+index 0 is our value, index 1 is our minimum, once added we return so as to avoid any errors.
+if we push and the stack if not empty, we set our current min equal to the last elements index 1.
+we then append the pair of our value, and the minimum between the value being appended and current min.
+what this does is repeatedly check and update minimum values as they are added, keeping constant time.
+when we want to pop we use the standard pop method.
+when we want to get the top we return the 0 index of the top value which contains the actual elements value.
+when we want to get the min we return the 1 index of the top value which contains the elements min.
+this solution runs in complement O(1) constant time.
 """
