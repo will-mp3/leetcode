@@ -9,7 +9,7 @@ class TreeNode:
         self.val = val
         self.left = left
         self.right = right
-        
+
 class Solution:
     def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
         if not root:
@@ -41,5 +41,12 @@ class Solution:
         return rightside
 
 """
-
+to solve this problem we make use of an iterative breadth first search algorithm, specifically using two queues.
+the way the algorithm works is we maintain two queues to represent the current and next level of our tree.
+as we go through our current queue, we add its children to the next queue.
+once we get to the last value of the current queue we know thats the rightmost node and we can append its value to our rightside array.
+each iteration we set our current queue to next, and create a new empty queue for next.
+we go through cur and add all the children until its empty then append that last node and repeat.
+this process contoinues until next is null signalling the end of the tree.
+this solution runs in O(n) linear time.
 """
