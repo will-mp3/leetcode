@@ -21,5 +21,11 @@ class Solution:
         return True
 
 """
-
+for this solution we use two hashmaps to track the occurances of characters in both the magazine and ransom note for comparison.
+we make use of the collections library here, alternatively we would make two dictinaries and track the occurances of each character.
+once our two dictionaries are made, we iterate through the char and counts in randsom count.
+for each character in ransom count, we assign magazine_count to the count for that character in our magazine_counts dictionary.
+we then compare this magazine count to the current count and return false if its less than the count from ransom count.
+if this loop executes without returning false, we know we can construct the ransom note and return true.
+this solution runs in O(n) linear time.
 """
