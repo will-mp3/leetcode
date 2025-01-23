@@ -11,7 +11,19 @@ Return the minimum number of jumps to reach nums[n - 1].
 The test cases are generated such that you can reach nums[n - 1].
 """
 
+class Solution:
+    def jump(self, nums: List[int]) -> int:
+        far, end = 0, 0
+        res, n = 0, len(nums)
 
+        for i in range(n - 1):
+            far = max (far, i + nums[i])
+
+            if i == end:
+                res += 1
+                end = far
+        
+        return res
 
 """
 
