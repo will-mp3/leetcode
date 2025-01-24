@@ -44,5 +44,16 @@ class RandomizedSet:
         return choice(self.list)
 
 """
-
+to solve this problem we will make use of two data structures, an array list and a hash map (list & dict).
+our dictionary can handle insertion and deletion in constant time, but struggles with getRandom.
+our list struggles with deletion but is great for get random.
+we will need to ensure these structs are linked together, we start by initiating them both empty.
+for insert, we check if the val is in our set already, if its not we map val:index in our dict and append val to our list.
+to remove, we need to swap the item at the end of the array with our desired removal element so we can pop in constant time.
+to do this we start by getting the last element and the index of the value to be removed.
+we get the last element from our list and the index from our dictionary of values and indexes.
+we set the element at this index in our array equal to the last element, overwriting it, and update the last element index in the dict.
+we then pop the duplicate last element from the end of our list and remove the original val from the dictionary.
+getRandom is much easier with the help of the random.choice module.
+this entire implementation runs in O(1) constant time.
 """
