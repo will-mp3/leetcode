@@ -31,5 +31,13 @@ class Solution:
         return res
 
 """
-
+this solution dosent make use of too many fancy concepts, the algorithm is rather starightforward.
+we start by initializing our variable i and result array.
+we then create an outer while loop, this loop represents one range each iteration.
+inside of this loop we create a variable start and set it to the value at the current index i.
+the next while loop serves to move i along the list of numbers so long as they are concurrent.
+once this loop breaks we know that our range is organized, we then check two conditions.
+if our start element is different than our current element (end) we append both of them in the proper format.
+if start and our current element are the same we only append one to avoid duplicates.
+this solution runs in O(n) linear time.
 """
