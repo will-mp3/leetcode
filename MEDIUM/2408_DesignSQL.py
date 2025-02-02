@@ -84,5 +84,7 @@ class SQL:
         return flat_list
 
 """
-
+i hate this style of problem, due to frustration I will be giving a short explanation.
+each table is represented as a dictionary, with row IDs as keys and row data as values.
+the exp method flattens the table's data into a list of strings, where each string represents a row with its ID and corresponding values.
 """
