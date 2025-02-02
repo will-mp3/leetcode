@@ -39,7 +39,49 @@ If name is not a valid table, returns an empty array. Each row is represented as
 with each cell value (including the row's id) separated by a ",".
 """
 
+class SQL:
 
+    def __init__(self, names: List[str], columns: List[int]):
+        self.rowIds = {}
+        self.cols_map = {}
+        self.tables = {}
+        for i in range(len(names)):
+            self.rowIds[names[i]] = 1
+            self.cols_map[names[i]] = columns[i]
+        for i in self.cols_map.keys():
+            self.tables[f"table_{i}"] = {}
+
+    def ins(self, name: str, row: List[str]) -> bool:
+        if(name in self.cols_map.keys() and len(row) == self.cols_map[name]):
+            self.tables[f"table_{name}"][self.rowIds[name]] =  row 
+            self.rowIds[name] += 1
+            return True
+        else:
+            return False
+
+    def rmv(self, name: str, rowId: int) -> None:
+        if(f"table_{name}" in self.tables.keys()):
+            if(rowId in self.tables[f"table_{name}"].keys()):
+                del self.tables[f"table_{name}"][rowId]
+
+    def sel(self, name: str, rowId: int, columnId: int) -> str:
+        if(f"table_{name}" in self.tables.keys()):
+            if(rowId in self.tables[f"table_{name}"].keys()):
+                for i in range(len(self.tables[f"table_{name}"][rowId])):
+                    if(i+1 == columnId):
+                        return self.tables[f"table_{name}"][rowId][i]
+        return "<null>"
+
+    def exp(self, name: str) -> List[str]:
+        flat_list = []
+        
+        if(f"table_{name}" in self.tables.keys()):
+            for i in self.tables[f"table_{name}"].keys():
+                row = str(i) + ","
+                for j in self.tables[f"table_{name}"][i]:
+                    row += str(j) + ","
+                flat_list.append(row.rstrip(','))
+        return flat_list
 
 """
 
