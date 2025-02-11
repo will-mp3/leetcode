@@ -29,5 +29,11 @@ class Solution:
         return result
 
 """
-
+to solve this problem we use a recursive decision tree approach.
+the top of our tree contains the original array nums.
+we recursively explore the permutations by removing the first value and carrying the remaining array to the next level.
+the value we pop is saved to n and will ultimately be appended once the call stack returns.
+for example, if nums = [1, 2, 3] then the left-most child would be [2, 3] and that childs left-most child would be [3].
+once we get to our base case len(nums) == 1, we pop our call stack and append all of those n values.
+what that looks like with our example is [3] gets 2 appended and then 1 appended and returns [3, 2, 1] as a permutation.
 """
