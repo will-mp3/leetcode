@@ -35,7 +35,7 @@ class Solution:
 
 """
 this solution makes use of a recursive function that takes advantage of the backtracking technique.
-to envision this, imagine that we have three rules to follow:
+to envision this, imagine that we have three rules to follow in a decision tree:
 only add open parenthesis if open count < n
 only add a closed parentheses if closed < open
 only valid if open == closed == n
