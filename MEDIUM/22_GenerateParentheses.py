@@ -34,7 +34,7 @@ class Solution:
         return res
 
 """
-this solution makes use of a recursive function that traverses a decision tree.
+this solution makes use of a recursive function that takes advantage of the backtracking technique.
 to envision this, imagine that we have three rules to follow:
 only add open parenthesis if open count < n
 only add a closed parentheses if closed < open
