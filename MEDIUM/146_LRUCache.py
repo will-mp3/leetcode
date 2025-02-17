@@ -62,5 +62,21 @@ class LRUCache:
             del self.cache[lru.key]
 
 """
-
+this implementation makes use of a few different structures.
+namely, we use both a linked list and hashmap to keep track of the least recent value and ensure constant time retrieval.
+our hashmap will map keys to the specific nodes in our LL instead of the values for easy removal and updating.
+we also create left and right sentinel nodes in our LL, these allow for constant time removal of the LRU value.
+our left node will always point to our least recently used value and our right node will point to our most recently used value.
+we also keep track of our capacity to ensure if its ever crossed we know to remove the LRU value.
+our cache has a few methods and helper methods, with get and put being our main methods.
+the helper methods remove and insert remove a given node and insert a given node at the rightmost position respectively.
+the get method gets the value based on a given key, if it exists.
+if key is in our cache we update it to the most recent and return the value associated with the key, otherwise return -1.
+we update using our remove and insert helper variables, essentially we remove the node and add it again, making it the most recent.
+our put method adds a new key value pair to our cache.
+first it checks if the key is already in our cache, if it is remove the node associated with the given key.
+we create a new node and add it to our cache, mapping it to its key.
+we then use our insert helper function to insert the node into our LL.
+after this is done we check to see if the capacity has been breached.
+if so we get our LRU and remove it from the list and delete it from the cache.
 """
