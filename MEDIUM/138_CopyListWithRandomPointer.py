@@ -21,7 +21,34 @@ random_index: the index of the node (range from 0 to n-1) that the random pointe
 Your code will only be given the head of the original linked list.
 """
 
+# Definition for a Node.
+class Node:
+    def __init__(self, x: int, next: 'Node' = None, random: 'Node' = None):
+        self.val = int(x)
+        self.next = next
+        self.random = random
 
+class Solution:
+    def copyRandomList(self, head: 'Optional[Node]') -> 'Optional[Node]':
+        oldToCopy = { None : None } # null pointer edge case
+
+        cur = head
+        # first pass: create copies of all nodes and map them to our hashmap
+        while cur:
+            # create copy of node and map the copy to the old node
+            copy = Node(cur.val)
+            oldToCopy[cur] = copy
+            cur = cur.next
+
+        cur = head
+        # second pass: set pointers
+        while cur:
+            copy = oldToCopy[cur]
+            copy.next = oldToCopy[cur.next]
+            copy.random = oldToCopy[cur.random]
+            cur = cur.next
+
+        return oldToCopy[head]
 
 """
 
