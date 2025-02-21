@@ -27,5 +27,9 @@ class Solution:
                 return slow
 
 """
-
+to solve this problem we treat our input as a linked list and use floyds cycle algorithm to detect a loop.
+to use our array as a linked list we treat the values in each position as pointers to respective indexes.
+for example if index zero held a 3, then it would point to index 3.
+say index three contains a 2, we would map a node with value 3 pointing to a node with value 2 and so on.
+these indexes and nodes are important to understand for how we will increment our pointers in the algorithm.
 """
