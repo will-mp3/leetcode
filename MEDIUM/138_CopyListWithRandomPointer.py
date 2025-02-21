@@ -51,5 +51,16 @@ class Solution:
         return oldToCopy[head]
 
 """
-
+this solution is actually very simple.
+the tricky part is the random pointer which needs to be accounted for when making the copy.
+to solve for this we use a two pass strategy and a hashmap of all the "old" nodes.
+we start by initializing our hashmap with one pair, null mapping to null, to account for the null pointer edge case.
+once this is done we set our variable cur equal to the head and begin our first pass.
+this first pass we aim to copy each node and map the old node (cur) to this new copy in our map.
+once this loop completes we set cur equal to the head once more and begin our second pass.
+the goal of our second pass is to set the pointers for each of our copy nodes.
+since we've saved them to our map we can access them using the current node as the key and set the pointers.
+to set said pointers we use cur.next and cur.random as our key for the hashmap which will get us the correct node to point to.
+once this is finished we can return the copy mapped to head.
+this solution runs in O(n) linear time.
 """
