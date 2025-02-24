@@ -32,5 +32,15 @@ class Solution:
         return (x, y) == (0, 0) or (dirX, dirY) != (0, 1)
 
 """
-
+this problem can be solved without the use of any fancy algorithms.
+we must start by first understanding what the conditions to return true are.
+to determine a cycle we have two conditions:
+if after the given instructions the position remains the same (0, 0) then we know that the robot is stuck in a loop.
+similarly, if at any point the direction changes from north facing, we know that the robot will also get stuck in a cycle.
+to deduce this we define direction coordinates and location coordinates.
+we start our robot at (0,0) and point it facing north (0, 1).
+we then read through our directions, when we encounter go we move our position based on the current direction coordinates.
+when left or right is given, we rotate the direction coordinates by swapping x and y directions and using sign swaps.
+the above is difficult to explaina in writing, if confused draw it out.
+once the directions have been read we simply check our two conditions mentioned prior and return the result.
 """
