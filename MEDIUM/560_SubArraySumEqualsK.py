@@ -23,5 +23,17 @@ class Solution:
         return res
 
 """
-
+this solution takes a greedy approach aimed at minimizing repeated work.
+the backbone of the algorithm is the tracking of prefixes as we go along the given list of nums.
+essentially, we are keeping track of prefix values and how many times they appear.
+we use a hashmap called prefixSums to track the prefix value and the amount of times it appears.
+for instance, if we see the prefix 1 appear twice it will be mapped as {1 : 2}.
+this could be the case in an array such as [1, -1, 1].
+using this idea we will traverse the entirety of our list of numbers, each time calculating the current sum and the diff between that and k.
+our result is an integer so we will use the value stored in our prefixSums hashmap as the incrementer for result.
+if we find a diff value that exists in our hashmap, meaning if our difference is equal to a previously saved prefix, we add its count.
+if the diff/prefix hasnt been found we add zero.
+we save our curSum as a prefix in our hashmap at the end of this logic and either increment it by 1 or add it with a count of 1.
+once the loop completes we return result.
+this solution runs in O(n) linear time.
 """
