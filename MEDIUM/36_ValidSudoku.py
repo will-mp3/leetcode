@@ -37,5 +37,18 @@ class Solution:
         return True
 
 """
-
+for this problem we utilize hashsets to make checking for duplicates easier, it is also possible with arrays since we know its a 9x9 array.
+to start we create hashsets for our rows, columns, and 3x3 squares within the board.
+the board values are mapped using the column and row for rows and cols respectively and a special form of indexing for the squares.
+the key for our squares hashset is acquired using integer division and maps all 9 squares as though they are coordinates.
+for example, the top left square will have the key (0,0) which is acquired by integer dividing any of its row col indices by 3.
+this is the same for the rest of them resulting in coordinates from (0,0) to (2,2).
+once our hashsets are in place we can use a nested loop to traverse the entire 9x9 array.
+as we traverse we check two things:
+first, if the cell is empty (represented by a dot) in which case we continue to the next iteration without doing anything.
+the next condition is if the cell is not empty.
+in this case we check if the value is present in any of our hashsets, if so we return false.
+if the value is not present we add it to all three sets using the correct key.
+if the loop fully runs we return true.
+this solution runs in O(9^2) time, which could be considered O(n^2) where n is the number of rows and columns.
 """
