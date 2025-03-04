@@ -32,5 +32,19 @@ class Solution:
         return dp[0][0]
 
 """
-
+this problem makes use of a dynamic programming array for its solution.
+to do this we set up a two dimensional array representing the dimensions of our two given strings.
+we first initialize every cell to false, these cells will be used as our cache as our algorithm executes.
+the basic idea is that, starting from the bottom right corner, 
+we check every cell to see if the characters represented by its indices matches the sum of those indices.
+an important formula to note is that the index of s1 + the index of s2 will always equal the current index of s3.
+this is because the sum of the lengths of s1 and s2 is the same as s3, so as we cross off used characters we naturally move through s3.
+with that out of the way lets continue.
+we start at the bottom right corner and check two conditions:
+if index i is in bounds, the character at s1[i] is equal the character at s3[i + j], and the cell to the right is True.
+if all three of these pass, we fill in the current cell with True.
+we then check if index j is in bounds, the character at s2[j] is equal the character at s3[i + j], and the cell below is True.
+if all three of these pass, we fill in the current cell with True.
+if neither of these execute we leave the cell as false and continue.
+once complete the loop will have gotten all the way to the top left cell and we can return its value.
 """
