@@ -48,5 +48,23 @@ class Solution:
         return res
 
 """
-
+for this solution we make use of a sliding window technique with a couple clever additions.
+for starters its important to understand that there are two target strings: 
+an alternating string that starts with 0 (ex: 010101) and one that starts with 1 (ex: 101010).
+knowing this we can create these strings and use them to count the number of differences from our string s.
+the number of differences is also the number of flips, and it is also the number of type 2 operations.
+what makes this question interesting is the ability to use type 1 operations, which moves the first value to the end of the string.
+we know that type 1 operations are cyclical, meaning we can do n type 1 operations before our string starts repeating.
+knowing this, we can create a modified string with every possible form of s, and traverse it using a sliding window.
+for example if s = 111000 we know that if we max out our type 1 operations s can look like 111000111000 with a sliding window of length s.
+we set up our problem using this idea, and using our sliding window check the number of differences based on every form s can take.
+note we must also duplicate our two target strings.
+we start the problem by getting the length of our original string s to size our window.
+we then create our new string s and our alt1 and alt2 strings which will represent our targets.
+we create a result variable and create two variables to count the number of differences for alt1 and alt2.
+now we can start sliding our window, each iteration we check if the values at index r are different and increment the appropriate diff count.
+once our window is of size n, we check if the soon to be changed left pointer had a difference.
+if so, we decrement the count and increment our left pointer.
+finally, once our window is big enough we can update our result and return it.
+this solution runs in O(n) linear time.
 """
