@@ -39,5 +39,20 @@ class Solution:
         return i
 
 """
-
+this problem would normally be as simple as an O(n) single pass algorithm, however the problem wants us to solve it in O(log n) time.
+to accomplish this we use a mdofied version of binary search, utilizing left and right "biasing" depending on if we which target we want.
+all of the logic is handled in our binary search function and makes use of left and right pointers.
+ultimately we are hoping to return the index of the first appearance (left bias) and last appearance(right bias).
+the idea is that when left biased, we focus on shifting our right pointer left and when right biased shifting our left pointer right.
+while our pointers arent overlapping we calculate a middle value, 
+if our target is greater than the middle value we move our left pointer to m + 1 position (right partition).
+if our target is less than the middle value we move our right pointer to the m - 1 position (left partition).
+if our target equals our middle position we save that index to i.
+our biasing now comes in handy, if we want the leftmost appearance, we will continue to search by moving our right pointer to m - 1.
+this partitions our array further allowing us to keep search left incase there is an instance of our target further left.
+if our we want the rightmost appearance, we shift our left pointer to m + 1 and search right based on the same premise.
+our bias variable essentially tells us which way we will continue to partition and search.
+once our pointers cross we can return our index variable.
+we run this for the left and right index of our result, only changing the passed in bias variable and return that result.
+this solution runs in O(log n) logarithmic time.
 """
