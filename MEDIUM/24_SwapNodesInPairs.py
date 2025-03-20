@@ -31,5 +31,19 @@ class Solution:
         return dummy.next
 
 """
-
+this solution dosent involve a super complicated algorithm, its just a little hard to visualize.
+to solve this problem we need to use a dummy node since we are manipulating a lot of pointers.
+the first thing we need to do is create this dummy node and set it pointing to head.
+once this is set up we can begin to visualize the problem.
+for every pair of nodes, we need to change the next pointers so that the first node in the pair (cur) is pointing to the third (cur.next.next)
+and the second (cur.next) is pointing to the first (cur).
+we do this swap for every value until we reach the end of our list.
+how we accomplish this is first by saving a few pointers for reassignment, specifically our "third" and "second" nodes in the pair.
+once we save these pointers we can reverse the pair.
+to do this we set our second node to our current node, our current node to the third, and our previous node to the second.
+the new order is now previous -> second -> first -> third.
+as you can see first and second have swapped but maintained the chain of nodes.
+finally we update our static pointers to move previous and cur up one node, in this case prev = first and cur = third (jumping two nodes).
+this continues until the list runs out and we return dummy.next which will always point to the head.
+this solution runs in O(n) linear time.
 """
