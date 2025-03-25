@@ -43,5 +43,24 @@ class Solution:
         return False
 
 """
-
+this problem gives us a time complexity restraint of O(log(m * n)).
+seeing this our first thought is that we will need to use some form of binary search given we are hunting for lgoarithmic time.
+the problem gives us two extra clues to help with this.
+we know that each row in our matrix is already sorted, and we also know our columns are sorted as well.
+knowing this, not only can we use binary search on each specific row to acheive O(mlogn) time (brute force would be O(m * n)).
+we can also binary search the columns using their first and last values to acheive O(log(m + n)).
+essentially we are taking what would be a linear product time complexity and turning it into a logarithmic sum.
+to start, we run binary search on our rows, we set top and bottom pointers and loop while they havent crossed.
+for each iteration we collect our middle value, row, and check to see if our target is greater than its rightmost (largest) value,
+or if our target is less than its leftmost (smallest) value.
+if the first is true we move our top value down and search the bottom partition. 
+if the second is true we move bottom up and search the top partition.
+if neither is true then our value should fall within our current row and we can break our of the loop.
+once the loop finishes we need to check if the break was due to finding the row or if the loop simply ran out.
+now we can do binary search on our specific row.
+following the same logic we set left and right pointers and loop while they havent crossed each other.
+we get our middle value, compare it to target, and search the appropriate partition.
+if at any point our middle value isnt greater than or less than our target, we found it and can return True.
+if the loop completes without returning True, return False.
+this solution runs in O(log(m + n)).
 """
