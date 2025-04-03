@@ -34,5 +34,7 @@ class Solution:
         return t if len(visit) == n else -1
 
 """
+this solution uses djikstras algorithm and min heaps to assess the minimum time to traverse the entire graph.
+TODO: finish explanation.
 
 """
