@@ -27,5 +27,15 @@ class Solution:
         return max(sumAdd, sumSubtract)
 
 """
-
+this solution makes use of a dynamic programming technique to avoid the use of extra memory in a dp array/hashmap.
+we start from the end of our array nums and work our way to the front, just like any bottom up dynamic programming algorithm.
+we keep track of two variables, sumAdd and sumSubtract, which represent the current maximum alternating subsequence.
+the difference between them is essentially if we choose to add or subtract the first value of our sequence.
+having both of these allows us to "checkerboard" the whole array ensuring every combination is tested.
+we start at the end of our array and update two temporary variables.
+our tmpAdd variable is updated with the max of our current sumAdd and the value we would get should we add the current value at index i.
+our tmpSubtract variable is updated with the max of our current sumSubtract variable and the value if we subtracted the current value.
+our two global variable are then updated with the temporary ones (which hold the new maxes) and our loop continues.
+once the loop completes we return the max of our global variables.
+this solution runs in O(n) linear time and has O(1) memory usage.
 """
