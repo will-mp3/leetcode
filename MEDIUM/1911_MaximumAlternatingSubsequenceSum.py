@@ -9,7 +9,22 @@ without changing the remaining elements' relative order.
 For example, [2,7,4] is a subsequence of [4,2,3,7,2,1,4] (the underlined elements), while [2,4,2] is not.
 """
 
+class Solution:
+    def maxAlternatingSum(self, nums: List[int]) -> int:
+        # sumAdd -> first value in subsequence was added
+        # sumSubtract -> first value in subsequence was subtracted
+        sumAdd, sumSubtract = 0, 0 # current maxes
 
+        for i in range(len(nums) - 1, -1, -1):
+            # compute maximum if we are adding
+            tmpAdd = max(sumSubtract + nums[i], sumAdd)
+
+            # compute maximum if we are subtracting
+            tmpSubtract = max(sumAdd - nums[i], sumSubtract)
+
+            sumAdd, sumSubtract = tmpAdd, tmpSubtract # new maxes
+
+        return max(sumAdd, sumSubtract)
 
 """
 
