@@ -24,5 +24,12 @@ class Solution:
         return res
 
 """
-
+this solution takes advantage of the fact that both arrays are of equal lenght.
+we know that since we are looking for the minimum, the nth fastest job should go to the worker with the nth amount of time.
+this allows for our quickest job to go to our worker with the least hours and vice verse.
+to accomplish this we begin by sorting our lists, this allows us to hit those 1 through n - 1 values in order.
+we iterate through both lists and check each time if there is a remainder when jobs[i] is divided by workers[i].
+if there is a remainder we have to add 1 to our computed value to account for the extra day required due to leftover time.
+we return the max of our current res and the newly calculated one for each index, according to the above condition.
+this solution runs in O(n log n) time due to the use of the sort function on both arrays.
 """
