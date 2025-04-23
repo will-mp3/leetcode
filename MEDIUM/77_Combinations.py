@@ -24,5 +24,10 @@ class Solution:
         return ans
 
 """
-
+this solution makes use of backtracking to gather all possible combinations based on our constraint k.
+we create a depth first search function as though we are traversing a tree and apply a base case when our current combinations is length k.
+the general idea is that for each value 1 through n we are creating every possible combination with the values larger than itself.
+we are able to use only larger values because we dont want duplicates, for example 1 will always have more combos than 2 in its tree etc.
+the recursion works using a current combination array and appends new values, calls dfs to check our base case, and pops after.
+of course this creates that recursive stack we are used to but ultimately the stack will pop and we will move to the next value at index 0.
 """
