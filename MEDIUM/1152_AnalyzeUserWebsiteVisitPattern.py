@@ -48,5 +48,17 @@ class Solution:
         return max_pattern
 
 """
-
+for this solution we are essentially trying to find the most repeated pattern when analyzing users web traffic.
+to accomplish this we will eventually create counts based on every possible pattern across all users traffic data.
+before that however, we need to get each users specific web traffic, which will require some input manipulation.
+we will store this info in a dictionary, graph, and to get this information we will need ot zip our three input arrays.
+we go through the now zipped and sorted, by timestamp, information and append each website visit to the user as we go.
+what this does is gives each users web traffic in its time stamp order (see sorting function in our for loop).
+next we create another dictionary for our patterns and their appearances, scores.
+for every user and website in our original graph, and for every possible pattern in each users website traffic, increment the pattern by 1.
+notice the set used to avoid duplicate patterns.
+this gives us every possible pattern from every users web traffic data and the amount of times we see it (max 1 per user).
+now we find our max pattern and return it.
+notice we track count to see if we have a duplicate max with a smaller lexographic pattern, 
+since we want to return the smallest lexographic solution.
 """
