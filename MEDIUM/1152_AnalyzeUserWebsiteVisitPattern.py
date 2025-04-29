@@ -21,7 +21,31 @@ Note that the websites in a pattern do not need to be visited contiguously,
 they only need to be visited in the order they appeared in the pattern.
 """
 
+from collections import defaultdict # dictionary
+from itertools import combinations # gather all possible combinations, respecting order
 
+class Solution:
+    def mostVisitedPattern(self, username: List[str], timestamp: List[int], website: List[str]) -> List[str]:
+        graph = defaultdict(list)
+
+        # gather tuples, sorted by timestamp, of all our information
+        for (t, u, w) in sorted(zip(timestamp, username, website)):
+            graph[u].append(w) # append website to user, already in order sorted by timestamp
+
+        scores = defaultdict(int)
+        for user, websites in graph.items():
+            # for every website visit order saved
+            for pattern in set(combinations(websites, 3)): # all unique combinations of three websites
+                scores[pattern] += 1
+
+        # find our max pattern and count
+        max_pattern, max_count = '', 0
+        for pattern, cnt in scores.items():
+            if cnt > max_count or (cnt == max_count and pattern < max_pattern):
+                max_pattern = pattern
+                max_count = cnt
+        
+        return max_pattern
 
 """
 
