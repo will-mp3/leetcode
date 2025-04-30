@@ -44,7 +44,7 @@ each time we check our fail case, if we have a previous value but nothing remain
 this depicts the scenario where our maxheap is empty but there is still a character to be added, 
 if we had an alternating value this would have been cleared and previous set back to Null.
 if this is the case return the empty string.
-if not, we get our count and char variable, add the character to string, and cinrement count by 1 (remember these are negative counts).
+if not, we get our count and char variable, add the character to string, and increment count by 1 (remember these are negative counts).
 we check if prev exists, if so we can push it to the heap again and reset prev to Null.
 if the count is not zero we set our new prev and continue.
 this solution runs in O(nlogn) thanks to the use of the heap.
