@@ -25,5 +25,13 @@ class Solution:
         return res
 
 """
-
+this solution is found by understanding how the bottle necks work in our problem.
+we know that for each given index, we can only hold as much water as the minimum of its left and right sides.
+using this understanding, our algorithm goes through the elevation array using left and right pointers to track elevations.
+we also track the max left and right elevations.
+the trick is that with each iteration, we shift the minimum of the two maxes and then calculate our water based on the newly shifted max.
+this is because we know, for example, if we had to shift the left max, then the left max is the bottleneck (the minimum of the two).
+this allows us to calulate the water caught by subtracting the bottleneck max by the current height.
+this idea is repeated until our pointers meet, each time updating result with the water calculation.
+this solution runs in O(n) time with O(1) space complexity.
 """
