@@ -43,5 +43,20 @@ class Solution:
                 l = i + 1
 
 """
-
+this problem involves us merging two lists to find the median, however a proper merge is not neecsary and actually wont work.
+the problem gives us a time contraint of O(logn) time, which points us in the direction of binary search.
+The idea is that we start by finding the middle of the smallest array, 
+and using that value calculate how much of our larger array is needed to make equal partitions.
+if the middle value of A is 3, and theres 12 values total, we know we need 3 values from B.
+we set up our variables to accomplish this first "pass" by getting our A and B arrays, ensuring A is the smallest.
+we also calculate our half value and save our total size.
+once done, we set up a loop that will continue until returned.
+the loop essentially binary searches until we find that our partitions are correct.
+that means our left half is smaller than our right half.
+we know this is true if the left value of A (largest of A left partition) is smaller than our right value of B (smallest of B right partition)
+and our left value of B (largest of B left partition) is less than our right value of A (smallest of A right partition).
+if this is true, we check whether there is an even number of elements and return the appropriate value.
+if not true, we check which partition to increment in order to perform our binary search.
+we then recalculate our A and B left & right values and repeat the process.
+this repeats until our partitions are correct and a value is returned.
 """
