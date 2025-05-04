@@ -39,5 +39,16 @@ class Solution:
         return res
 
 """
-
+this problem uses recursion to repeatedly partition and check words in a set.
+the idea here is we have a set of words and want to check if any of them are made up of two or more of the words in said set.
+we also use caching to optimize just a little bit but the logic is hardly dependent on it.
+our dfs function does most of the heavy lifting, our code starts by going through each word in our list and running dfs on it.
+what happens in our dfs function is the word gets broken into prefix and suffix portions for every position in the given word.
+if our prefix and suffix are both in our wordset we know we have a concatenated word and can return true.
+this is the case when our current word can be broken into two parts.
+for the instance in which it is three or more words we have an or statement in that same conditional.
+this second conditional checks if our prefix is in wordset AND dfs(suffix) returns true.
+if the latter is true then we know our suffix can acutally be broken into multiple partitions, which is where the recursion comes.
+every time one of the two conditionals executes we return true until the recrusive stack is popped and add the word to our result.
+if those never activate we return false and move to the next word in our original loop.
 """
