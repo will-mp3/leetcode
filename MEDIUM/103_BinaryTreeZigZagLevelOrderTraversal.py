@@ -9,7 +9,7 @@ class TreeNode:
         self.val = val
         self.left = left
         self.right = right
-        
+
 class Solution:
     def zigzagLevelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
         res = []
@@ -34,5 +34,11 @@ class Solution:
         return res
 
 """
-
+this problem follows a simple breadth first search with a minor twist at the end.
+like any bfs we approach this with a queue.
+while our queue is not empty we build our level, iterating based on the current length of the queue (nodes to be added to this level).
+we popleft to get the leftmost node, add it to level, then check our nodes children and add them to the queue.
+this goes through the entire level, fills up the nodes for the next level, then adds the current level to our result.
+the twist is when we are on an odd level we reverse our list.
+to do this we just mod the length of our result, if length is odd we know to reverse the list.
 """
