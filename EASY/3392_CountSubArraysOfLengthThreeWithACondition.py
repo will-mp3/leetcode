@@ -12,5 +12,10 @@ class Solution:
         return res
 
 """
-
+this solution is a super simple pass through with a clever trick.
+since we are dealing with subarrays, 
+we can almost mirror a sliding window by starting at index 1, ending at index n - 1, and checking adjacent values.
+we go through the array starting at index 1, each time check if its neighbors summed and doubled equals its value.
+if so increment result by 1 and return result once the loop ends.
+this solution runs in O(n) linear time.
 """
