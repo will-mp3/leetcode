@@ -30,5 +30,13 @@ class Solution:
         return res
 
 """
-
+this solution relys on binary search for optimization but really builds off the brute force solution.
+we know two things off the start: the minimum eating rate is 1, and the maximum eating rate is the maximum pile in piles.
+the brute force solution checks every rate, 1 to max(piles), and returns the minimum of all the working rates.
+if this was a left to right pass it would return the first working rate.
+our solution makes use of binary search and instead starts at the middle rate k.
+we calculate if k is a working rate, if it is we check our left partition for any working rates that may be smaller.
+if k is not a working rate we check the right partition to find one that will work.
+this pattern repeats, updating our result based on the minimum rate k found.
+once complete we return result.
 """
