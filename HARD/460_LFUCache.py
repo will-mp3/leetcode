@@ -103,5 +103,5 @@ class LFUCache:
 # obj.put(key,value)
 
 """
-
+i dont wanna talk about it.
 """
