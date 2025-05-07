@@ -10,7 +10,24 @@ Koko likes to eat slowly but still wants to finish eating all the bananas before
 Return the minimum integer k such that she can eat all the bananas within h hours.
 """
 
+class Solution:
+    def minEatingSpeed(self, piles: List[int], h: int) -> int:
+        l, r = 1, max(piles)
+        res = r # max out solutiong can be
 
+        while l <= r:
+            k = (l + r) // 2
+            hours = 0
+            for p in piles:
+                hours += math.ceil(p / k) # round up function
+
+            if hours <= h: # working rate found, look for smaller rate
+                res = min(res, k)
+                r = k - 1
+            else: # no working rate found, look for larger rate
+                l = k + 1
+
+        return res
 
 """
 
