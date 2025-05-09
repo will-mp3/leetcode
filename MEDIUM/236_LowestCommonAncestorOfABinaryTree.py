@@ -38,5 +38,13 @@ class Solution:
             return r
 
 """
-
+to solve this problem we use a depth first search algorithm to search the entire tree.
+we use the logic of, for each root node checked, if the target values are in the left and right subtrees, return the root as LCA.
+if the target values are in either the left or the right subtree, meaning one tree returned a value and one returned null, 
+return the target found as the LCA.
+we see this in our code as having our base case when the root/current node equals a target, return it.
+if thats not the case we search the left and right subtrees.
+based on the return value we know what to pass up the stack as the LCA.
+if targets are found in left and right, l and r are not null, return the root/current node.
+if l is not null and r is, return the l value as our LCA and vice versa for r.
 """
