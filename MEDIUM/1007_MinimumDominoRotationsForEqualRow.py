@@ -34,5 +34,17 @@ class Solution:
         return -1
 
 """
-
+to solve this problem we know that if theres a solution then there is one value that every pair of dominoes has in common.
+instead of checking all values one through six we can check the two values in the first set, since we know it must be one of those two.
+the basic algorithm is we are looping through the top and bottom dominoes, and each time keeping track of the missing values in top and bottom.
+if the target value is not present in the top, we increment missing top by one and vice versa.
+at the end we return the minimum missing value from top or bottom.
+the way the code works is by looping through once for each target value (twice total).
+each time we track our missing top and missing bottom.
+for each target we loop through each set of dominoes, which we get through a pair using the zip function.
+if at any point we get a pair that dosent have the current target value, we break the loop and either return zero or check the next target.
+if the current target is in our set we check if its misisng from the top or the bottom and increment.
+if either target reaches the end of the list of dominoes we know our solution is present, a common value was found.
+at this point we return the current minimum missing value.
+this solution runs in O(n) linear time.
 """
