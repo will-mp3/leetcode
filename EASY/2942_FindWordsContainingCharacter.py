@@ -15,5 +15,8 @@ class Solution:
         return res
 
 """
-
+super simple solution here, no fancy algorithm.
+we go throught the entire given array of words using a for loop to track the index.
+each time we check if character x is in the word at index i, if so add index i to our result.
+at the end return result
 """
