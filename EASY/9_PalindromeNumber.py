@@ -12,5 +12,7 @@ class Solution:
             return False
 
 """
-
+to solve this problem we use basic string manipulation to reverse our input number.
+we first must turn our integer into a string.
+once done we can use python syntax [::-1] to reverse this string and check if they are equal.
 """
