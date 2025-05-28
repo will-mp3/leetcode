@@ -49,5 +49,11 @@ class Solution:
         return res
 
 """
-
+to solve this problem we use a hash map to map the value to each roman numeral.
+with this map in place we can go through the string and assess each characters value.
+the catch is as we go through the string we need to check the condition if the next value is larger than the current one.
+is thats the case we actually want to add the larger value minus the smaller value.
+in this case we skip to characters instead of the usual one.
+when we reach the end of our string, i equals len(s), we know we are done and can add the last value and return.
+this solution runs in O(n) linear time.
 """
