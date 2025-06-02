@@ -23,7 +23,7 @@ class Solution:
 """
 to solve this problem we will make use of bottom up dynamic programming.
 by calculating the amount of coins necesary to get to every value up to the total and saving those values to memory
-we are able to calculate the amount of money amount of coins we need total.
+we are able to calculate the amount of coins we need total.
 if we consider 0 our base case, the amount of money needed to get to the goal amount, we can begin counting backwards.
 take the coin array [1, 3, 4, 5] and goal amount 7 as an example.
 our dynamic programming array dp can keep track of the coins needed to reach each value up to 7:
