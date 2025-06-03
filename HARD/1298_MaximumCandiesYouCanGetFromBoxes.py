@@ -11,7 +11,41 @@ You can take all the candies in any open box and you can use the keys in it to o
 Return the maximum number of candies you can get following the rules above.
 """
 
+class Solution:
+    def maxCandies(self, status: List[int], candies: List[int], keys: List[List[int]], containedBoxes: List[List[int]], initialBoxes: List[int]) -> int:
 
+        seen = set()
+        canSee = set()
+        res = 0
+
+        def dfs(box): # box received as an index
+
+            if box in seen:
+                return 0
+            
+            if not status[box]:
+                canSee.add(box)
+                return 0
+
+            seen.add(box)
+            candy = candies[box]
+
+            for newBox in containedBoxes[box]:
+                candy += dfs(newBox)
+
+            for key in keys[box]:
+                status[key] = 1
+                if key in canSee:
+                    candy += dfs(key)
+            
+            return candy
+
+        return sum([dfs(box) for box in initialBoxes])
+
+        for box in initialBoxes:
+            res += dfs(box)
+        
+        return res
 
 """
 
