@@ -23,11 +23,9 @@ class firstSolution:
             candy = 0
 
             if status[box]:
-                print(myBoxes)
                 candy = candies[box]
                 candies[box] = 0
                 myBoxes.remove(box)
-                print(myBoxes)
 
                 if keys[box]:
                     for i in range(len(keys[box])):
@@ -77,13 +75,27 @@ class optimalSolution:
             
             return candy
 
-        return sum([dfs(box) for box in initialBoxes])
-
         for box in initialBoxes:
             res += dfs(box)
         
         return res
 
 """
-
+both of these solutions make use of a depth first search algorithm.
+the first example is the worst case time complexity that dosent make use of caching.
+this solution repeatedly recruses over the boxes in the myBoxes array, which are removed once opened.
+this extra recursion adds a lot of time.
+the optimal solution using caching, where instead of removing boxes it adds them to a seen set.
+this cuts the recursion down a lot and simplifies the solution all together.
+we have a seen set for boxes we've opened and a canSee set for boxes we've seen but havent opened.
+each time we check if our box has been opened, if so return 0.
+then we check if the box is locked, if so add it to our canSee set and return 0.
+if neither execute then we can opne our box.
+add the box to seen and gather its candies.
+now we go through any new boxes also in the box, call dfs on all of those boxes and add the result to candy.
+now we check the keys we may have found.
+for each key unlock the box in the status array.
+if the key goes to a box in our canSee set, call dfs on that box and add the result to candy.
+once our recursive stacks return we can return our candy value.
+call dfs on every box in our initial box and return the sum of all trees.
 """
