@@ -25,5 +25,10 @@ class Solution:
         return curMax
 
 """
-
+this solution uses a clever formula alongside a sliding window for its solution.
+we are able to calculate the max length of our answer using the formula len(word) - numFriends + 1.
+using this we can create a sliding window taking chunks of that size for every index in the word.
+each time we check if the new window is larger than the one we have saved and update if necessary.
+we also keep in mind the index and when necessary opt for the window to be from i to len(word) to stay in bounds.
+this solution runs in O(n) linear time.
 """
