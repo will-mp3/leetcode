@@ -45,5 +45,17 @@ class Solution:
         return ''.join(res)
 
 """
-
+this problem requires an adjacency list for its solution, we pair this with a depth first search algorithm.
+if transitivity was not an included rule, we could simply take the min of the neighbors for each character in baseStr.
+however due to the inclyusion of transitivyt we have to find the min of our neighbors neighbors to ensure our solution is correct.
+now if we change the word neighbor to children its obvious we cna use dfs to traverse our entire adj list.
+we start by making our adj list, which is a dictionary of listy type.
+we fill it in mapping characters in s1 to s2 and vice versa.
+for each character in baseStr we add the result of our dfs function.
+our dfs function takes in the current char as well as a fresh visited set with each char in baseStr.
+our dfs first adds the passed char to visited and sets it to the current min since we will be looking down from here on.
+we call dfs on every unvisited neighbor of our current char.
+once that recurisve stack pops up to the current level, we compare the found minimum with our current minimum.
+our base case is when every neighbor of the current node has been visited, in which we just return the current char.
+this well effectively min compare every connected character to our passed in character.
 """
