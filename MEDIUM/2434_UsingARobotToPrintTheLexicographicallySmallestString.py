@@ -33,5 +33,16 @@ class Solution:
         return ''.join(res)
 
 """
-
+this problem is broken up into three logic segments.
+we want to use a stack for this problem but also track the smallest character remaining inb our original string s.
+the basic logic is for every character in s we push it to the stack and then check if that character is the smaller than the smallest in s.
+if the top of the stack is the smallest we can append it to result, otherwise move to the next character.
+at the end we append the remainder of the stack and return the string.
+more in depth, we use Counter to create an array of frequencys for each characater in s.
+this sorted frequency array is how we will track the smallest characters left in s.
+our helper function min_char turns numbers 1 - 26 into their respective lowercase letters and returns the first letter present in freq.
+with that set up we loop through every character in s, each time pushing to the stack, decrementing its freq value and checking:
+if the stack is not empty and the top value of the stack is less than the smallest in s.
+while this is true we pop and append the stack.
+once this loop completes we append the remaining stack and return the result.
 """
