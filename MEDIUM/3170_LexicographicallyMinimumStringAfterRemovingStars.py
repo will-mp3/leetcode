@@ -56,5 +56,13 @@ class OptimalSolution:
         return "".join(c for c in arr if c != "*")
 
 """
-
+ive included two solution for this problem with similar logic.
+one of them is my own which failed one text case but is easier to understand and the other is the optimal solution.
+the simple logic of this problem is that we have to traverse our string until we find an asterisk.
+once found, we remove the nearest, smallest character in the left partition from the found asterisk.
+we do this by tracking our characters seen and their counts in a count array.
+we use unicode values for our characters where the index matches the specific character.
+each time one is seen we increment its index.
+if an asterisk is found we call a helper function which finds the smallest character with a count and searches our new string for it.
+we search backwards from the asterisk to find the first one available to keep the string as lexicographically small as possible.
 """
