@@ -7,7 +7,7 @@ Delete the leftmost '*' and the smallest non-'*' character to its left. If there
 Return the lexicographically smallest resulting string after removing all '*' characters.
 """
 
-class Solution:
+class MySolution:
     def clearStars(self, s: str) -> str:
         
         nStr = []
@@ -40,6 +40,20 @@ class Solution:
             cnt[charIdx] += 1
 
         return ''.join(nStr)
+    
+class OptimalSolution:
+    def clearStars(self, s: str) -> str:
+        cnt = [[] for _ in range(26)]
+        arr = list(s)
+        for i, c in enumerate(arr):
+            if c != "*":
+                cnt[ord(c) - ord("a")].append(i)
+            else:
+                for j in range(26):
+                    if cnt[j]:
+                        arr[cnt[j].pop()] = "*"
+                        break
+        return "".join(c for c in arr if c != "*")
 
 """
 
