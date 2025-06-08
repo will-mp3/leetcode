@@ -23,5 +23,11 @@ class Solution:
         return res
 
 """
-
+this soltuion uses depth first search to go order oyur naumbers.
+we loop through numbers in range 1 - 9 if n is 10 or larger and 1 - n if n is small.
+each time we add the number to result and call dfs on the number.
+our dfs function then raises it a power of ten and loops through numbers 1 - 9.
+each time we check if our new number plus i is greater less than or equal to n.
+if it is we append our new number plus i and call dfs on it.
+this searches a tree that visits 1, 10, 100, 1000 etc first before checking 1001, 1002, etc.
 """
