@@ -8,7 +8,21 @@ a2 has an even frequency in the string.
 Return this maximum difference.
 """
 
+class Solution:
+    def maxDifference(self, s: str) -> int:
+        maxOdd, minEven = 0, float('inf')
+        map = {}
 
+        for char in s:
+            map[char] = 1 + map.get(char, 0)
+        
+        for val in map.values():
+            if val % 2 == 0:
+                minEven = min(minEven, val)
+            else:
+                maxOdd = max(maxOdd, val)
+
+        return maxOdd - minEven
 
 """
 
