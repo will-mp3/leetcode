@@ -25,5 +25,11 @@ class Solution:
         return maxOdd - minEven
 
 """
-
+this solution makes use of a hashmap to track the occurences of each character in s.
+you could also use the collections library, but this is more general.
+we count every time a character appears, each time incrementing its count in map.
+once done we go through each value in our map and check if its even or odd.
+we want to find the smallest even value and the largest odd value.
+for each value, after we check even or odd, we check if its smaller or larger respectively.
+once done we return the difference between our max oodd and min even values.
 """
