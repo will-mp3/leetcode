@@ -12,5 +12,8 @@ class Solution:
         return maxDif
 
 """
-
+this problem is simple if you are able to understand the rotation portion.
+we arent doing anything but comparing adjacent values here, except for the roatetd bit.
+there is no special funciton needed, just compare the first value minus the last outside of the loop.
+this solution runs in O(n) linear time.
 """
