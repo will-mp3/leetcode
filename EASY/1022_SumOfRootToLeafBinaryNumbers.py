@@ -41,5 +41,11 @@ class Solution:
         return val
 
 """
-
+for this problem we use depth first search to traverse the tree.
+each new node we check if it exists, if not we return (base case).
+if the node exists we append the string value of the node to our num string.
+we then check if there are any children, if not the binary string is complete and we can add it to our result list.
+we then call dfs on its children.
+at the end for go through each string num in our result array and add its integer value to val.
+we use int(num, 2) to transform binary values to base 2.
 """
