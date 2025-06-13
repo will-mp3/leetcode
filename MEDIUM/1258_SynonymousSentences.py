@@ -38,5 +38,13 @@ class Solution:
         return sorted(fin_res) # Return results in lexicographical order
 
 """
-
+this solution uses the Union-Find (Disjoint Set Union) data structure to group all synonyms into connected components. 
+each word is assigned a representative root, and synonyms are merged under a common root using the union and find functions, 
+with path compression for efficiency. 
+after building the synonym groups, we map each group root to its full set of synonyms. 
+the input sentence is then split into words, and for each word, we collect all possible replacements from its synonym group 
+(or leave it unchanged if no synonyms exist). 
+finally, we use itertools.product to compute the Cartesian product of these word choices—generating all valid synonym-substituted sentences. 
+the output is sorted lexicographically for consistency. 
+this approach efficiently generates all sentence variations that preserve the meaning while accounting for synonym relationships.
 """
