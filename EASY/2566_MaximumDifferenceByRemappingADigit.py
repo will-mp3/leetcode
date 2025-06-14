@@ -11,7 +11,21 @@ Bob can remap different digits for obtaining minimum and maximum values respecti
 The resulting number after remapping can contain leading zeroes.
 """
 
+class Solution:
+    def minMaxDifference(self, num: int) -> int:
+        minS, maxS = str(num), str(num)
 
+        # find digit to replace for max
+        for x in maxS:
+            if x != "9":
+                maxRep = x
+                break
+            maxRep = "9"
+
+        minS = minS.replace(maxS[0], "0")
+        maxS = maxS.replace(maxRep, "9")
+
+        return int(maxS) - int(minS)
 
 """
 
