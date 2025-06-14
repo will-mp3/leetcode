@@ -28,5 +28,11 @@ class Solution:
         return int(maxS) - int(minS)
 
 """
-
+we take a greedy approach to this problem by analyzing two things:
+the largest value can be made by flipping the most significant digit (that isnt already 9) to 9.
+the smallest value can be made by flipping the most significant digit to 0.
+knowing this we flip the first digit (and all its occurences) to 0 for our minimum value.
+we then find our max value to flip by finding the first value that is not 9 and saving it.
+we then flip every occurence of this value to 9 for our max value.
+return the difference of the two strings.
 """
