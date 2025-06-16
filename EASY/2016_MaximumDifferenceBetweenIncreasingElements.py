@@ -22,5 +22,13 @@ class Solution:
         return maxDif
 
 """
-
+for this solution we use two pointers to find the largest difference.
+the basic algorithm is we traverse our list iwth left and right pointers, checking the difference each time.
+with each iteration we first check to see if the last seen number is smaller than our current left pointer, our small value.
+if it is smaller, we update the left pointer to r - 1 (the last seen value).
+we then check if the difference between nums[r] and nums[l] is larger than our current largest difference, if so update.
+finally we increment our right pointer by 1 and repeat the process until out of bounds.
+once the loop completes we check if we found a difference greater than zero, if not return -1.
+otherwise return maxDif.
+this solutions runs in O(n) linear time.
 """
