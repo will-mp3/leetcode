@@ -46,5 +46,10 @@ class Solution:
         return comb(n - 1, k) * m % MOD * qpow(m - 1, n - k - 1) % MOD
 
 """
-
+the problem requires us to construct an array of length n, where each number is in the range [1,m], 
+and exactly k pairs of adjacent elements are the same. We need to find how many such arrays can be constructed.
+in an array of length n, there are n−1 pairs of adjacent elements. 
+among these, k pairs must consist of equal adjacent elements, and the remaining n−1−k pairs must consist of different adjacent elements. 
+we can treat these n−1−k differing adjacent positions as partitions, which divide the array into n−k contiguous segments, 
+where each segment contains identical values.
 """
