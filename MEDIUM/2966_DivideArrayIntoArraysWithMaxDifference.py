@@ -28,5 +28,14 @@ class Solution:
         return res
 
 """
-
+this solution is rather simple and avoids the use of any tricky algorithm through pattern recognition.
+we know that we are working with differences, and specifically with difference threshholds.
+logically we choose to sort our array of numbers to minimize the difference ebtween adjacent elements.
+this allows us to split our array nums in sub arrays with the most optimal grouping without any work.
+knowing this we have a loop through our now sorted array.
+the basic idea is we keep a cur array that appends itself to our our res array when it reaches three elements.
+we use cur to repeatedly transfer an array of length three, effectively dividing the original array nums.
+while this is happening we also check a condition when we reach length three, that being that the difference of all elements is <= k.
+we use absolute value to save ourselves from doubling our required calculations and return an empty array if invalid.
+this solution runs in O(n) linear time.
 """
