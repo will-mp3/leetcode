@@ -8,7 +8,24 @@ Return a 2D array containing the arrays. If it is impossible to satisfy the cond
 And if there are multiple answers, return any of them.
 """
 
+class Solution:
+    def divideArray(self, nums: List[int], k: int) -> List[List[int]]:
+        subC = len(nums) // 3
+        res = []
+        sort = sorted(nums)
+        
+        cur = []
+        for num in sort:
+            cur.append(num) # add values to cur array
+            if len(cur) == 3:
+                # logic to check k difference
+                if abs(cur[0] - cur[1]) > k or abs(cur[1] - cur[2]) > k or abs(cur[0] - cur[2]) > k:
+                    return []
 
+                res.append(cur)
+                cur = []
+        
+        return res
 
 """
 
