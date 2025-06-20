@@ -21,5 +21,12 @@ class Solution:
         return res
 
 """
-
+to solve this problem we use a greedy approach.
+we can sort our array nums in increasing order to give us an easier way of working with its values.
+when the values are sorted we can traverse them in order, tracking the first value and denoting when an element is too large for a partition.
+the way this works in code is by tracking a first value to represent the first and smallest value of a current partition.
+we go through each number in nums, and if the difference between the number and our first value is greater than k we do the following.
+first we save our current nmber as our new first value, then we increment our partition count to signify a new partition.
+we let this loop run and return the result.
+this solution runs in O(n) linear time.
 """
