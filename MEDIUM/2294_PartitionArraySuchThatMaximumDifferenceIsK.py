@@ -9,7 +9,16 @@ A subsequence is a sequence that can be derived from another sequence by deletin
 changing the order of the remaining elements.
 """
 
-
+class Solution:
+    def partitionArray(self, nums: list[int], k: int) -> int:
+        nums.sort()
+        res = 1
+        first = nums[0]
+        for num in nums:
+            if abs(num - first) > k:
+                first = num
+                res += 1
+        return res
 
 """
 
