@@ -37,5 +37,9 @@ class Solution:
         return ans
 
 """
-
+for this solution we know that we can get an extra 2 distance for each change k we make.
+we loop through our characters in s, calculating the distance each time by our incrementing directional values.
+our manhattan distance is the sum of x and y.
+to get the max distance we add our md with the available changes we have (min(2 * k, i + 1 - md)).
+each time we update our answer with the max of itself and the new max distance.
 """
