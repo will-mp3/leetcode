@@ -35,5 +35,14 @@ class Solution:
         return res
 
 """
-
+this solution uses a clever algorithm to find its solution.
+what we are doing is running a simulation on every letter in our string.
+we first and foremost gather the counts for each letter in a dictionary and set our default result to the length of the string.
+for each character in our string we run a simulation as if it was the smallest count present.
+doing this we know a few things:
+one, if any character has less occurences, they must all be deleted.
+two, if a character has more than k extra occurances, we must delete the excess occurances so that there is no greater than k.
+each time we do one of these operations we add the deletions to our deleted value.
+we compare this deleted value with our current result and update based on the minimum.
+this is done for every character, effectively simulating every possible solution and its required deletions.
 """
