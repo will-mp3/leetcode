@@ -11,7 +11,23 @@ Given the string s, the size of each group k and the character fill,
 return a string array denoting the composition of every group s has been divided into, using the above procedure.
 """
 
-
+class Solution:
+    def divideString(self, s: str, k: int, fill: str) -> List[str]:
+        res = []
+        
+        cur = ""
+        for char in s:
+            cur = cur + char
+            if len(cur) == k:
+                res.append(cur)
+                cur = ""
+        
+        if cur:
+            while len(cur) < k:
+                cur = cur + fill
+            res.append(cur)
+        
+        return res
 
 """
 
