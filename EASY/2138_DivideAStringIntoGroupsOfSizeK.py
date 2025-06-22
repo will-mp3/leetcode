@@ -30,5 +30,11 @@ class Solution:
         return res
 
 """
-
+this solution is a simple one pass algorithm.
+the foundation is simple enough, use a copy variable to house characters until its length meets a certain threshold k.
+this repeatedly builds and adds k sized string to our result array.
+the added logic comes after the loop finishes and handles our fill.
+if cur still exists (is non empty) after the loop finishes, we know we must fill it to size k.
+once done we return result.
+this solution runs in O(n) linear time.
 """
