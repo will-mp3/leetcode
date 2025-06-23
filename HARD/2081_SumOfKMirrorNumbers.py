@@ -42,7 +42,7 @@ class Solution:
         
         return res
     
-    # second, working solution (includes optimization)
+# second, working solution (includes optimization)
     class Solution:
         def createPalindrome(self, num: int, odd: bool) -> int:
             x = num
