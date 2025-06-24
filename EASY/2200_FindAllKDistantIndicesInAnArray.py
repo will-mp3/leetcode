@@ -5,7 +5,21 @@ A k-distant index is an index i of nums for which there exists at least one inde
 Return a list of all k-distant indices sorted in increasing order.
 """
 
+class Solution:
+    def findKDistantIndices(self, nums: List[int], key: int, k: int) -> List[int]:
+        idxs = []
+        res = set()
 
+        for i in range(len(nums)):
+            if nums[i] == key:
+                idxs.append(i)
+
+        for i in range(len(nums)):
+            for j in idxs:
+                if abs(i - j) <= k:
+                    res.add(i)
+
+        return list(res)
 
 """
 
