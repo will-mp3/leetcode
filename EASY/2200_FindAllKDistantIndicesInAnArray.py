@@ -22,5 +22,12 @@ class Solution:
         return list(res)
 
 """
-
+this solution is not the more optimized but I believe its the most intuitive.
+we get here by breaking down the problem a little bit more, theres two parts to understand.
+we need to find the elements in our array nums which are equal to our key and save their index.
+with these indices, we are computing a difference equation with respect to k.
+the range of values we need in our result is j - k through j + k for all in-bound indices j whose value equals key.
+to do this simply we iterate through our list once more and for each index i, if the absolute value j is less than or equal to k, ass to res.
+we make result a set to avoid potential duplicates, though I dont know if its necesary for this algorithm.
+this solutions runs in O(n) linear time.
 """
