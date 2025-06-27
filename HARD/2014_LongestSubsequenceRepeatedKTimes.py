@@ -39,5 +39,10 @@ class Solution:
         return res
 
 """
-
+this solution uses breadth first search for its solution and a helper function, isK, to check if the subsequence is valid.
+our function starts with a queue holding an empty string, we go through each letter a - z and see if there is k or more instances in s.
+if there are, we add it to our queue, each time we add to the queue we save that as our result.
+ultimately the last value added to the queue is our result (lexicographically largest and longest).
+after our initial run thorugh the queue, we then start to build subsequences using a - z, each time checking them with isK like before.
+this continues updating our queue until it is empty then returns our last added subsequence.
 """
