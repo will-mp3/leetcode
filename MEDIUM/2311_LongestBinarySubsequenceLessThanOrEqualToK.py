@@ -23,7 +23,7 @@ class Solution:
         return len(res)
 
 """
-the key to this solution is how we read in our binary stirng s.
+the key to this solution is how we read in our binary string s.
 we know that we can include leading zeros, so the max length of our subsequence is the length of s.
 what that leaves us to do is figure out the minimum amount of characters we have to remove to make s less than or equal to k.
 my approach to this is by going through the string backwards and creating a new string with each character seen.
