@@ -7,7 +7,28 @@ A subsequence is an array that can be derived from another array by deleting som
 the order of the remaining elements.
 """
 
+class Solution:
+    def maxSubsequence(self, nums: List[int], k: int) -> List[int]:
+        res = []
 
+        # create list of number and their indexes
+        idxs = [ [i, n] for i, n in enumerate(nums)]
+
+        # sort these pairs by their number, not index
+        sort = sorted(idxs, key = lambda x: x[1])
+
+        # get the largest k value pairs
+        resPairs = []
+        for i in range(len(nums) - k, len(nums)):
+            resPairs.append(sort[i])
+        # sort the largest k pairs by index
+        resPairs.sort()
+
+        # gather values from sorted indices
+        for pair in resPairs:
+            res.append(pair[1])
+        
+        return res
 
 """
 
