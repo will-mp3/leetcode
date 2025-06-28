@@ -31,5 +31,13 @@ class Solution:
         return res
 
 """
-
+this solution is optimized so its a little less intuitive.
+the tricky part with this problem is retaining the original order of the values.
+we can sort the list and pick the k largest which will give us our sum, but we also need to retain their order.
+to do this we make a new list that includes the string indices.
+with this list we sort by the value just as mentioned before using a lambda function in our sorted key.
+this function basically says sort by index 1 instead of index 0 in each pair.
+we then grab the k largest like before and put them into a result pair list.
+we sort this list like normal, which sorts it by the index by default.
+with our now ordered list all thats left to do is return the value in the index value pair in a result list.
 """
