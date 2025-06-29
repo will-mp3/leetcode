@@ -24,5 +24,12 @@ class Solution:
         return res
 
 """
-
+this solution is very intuitive but relys on the underlying formula to find the amount of subsequences.
+for a sequence of length n, there are 2^n valid subsequences, this is vital to understanding our solution.
+intuitively we want to check all frames of our list, we frame our list using left and right pointers starting at 0 and len - 1.
+the first thing we want to do is sort our list, this allows us to know the max and min of a certain subsequence.
+for each frame l, r we know that if nums[l] + nums[r] <= target then that is true for all indices within that range.
+this is where our formula comes in, because all within an approved range are valid, we can add 2^(l - r) to our result (l - r = frame size).
+we check this condition for each frame, if nums[l] + nums[r] <= target, we check a larger l value, else we check a smaller r.
+note every time we add to result to take the modulo to conform to question specifications.
 """
