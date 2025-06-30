@@ -19,5 +19,11 @@ class Solution:
         return res
 
 """
-
+this problem is tricky as the description is very misleading.
+on first glance our task is to find the longest subsequence (retaining order) where the largest and smallest values have a difference of 1.
+this idea of retaining order is misleading because its really a counting problem.
+it dosent matter what the first and last values are, and if you wanted to you could sort the list as well.
+my approach is to find the count of each number in the list and save it to a hasmap.
+with this i would go through each number again and if num + 1 is present, update the result with their two counts.
+order dosent matter, just how many there are.
 """
