@@ -8,7 +8,13 @@ You are given a string word, which represents the final output displayed on Alic
 Return the total number of possible original strings that Alice might have intended to type.
 """
 
-
+class Solution:
+    def possibleStringCount(self, word: str) -> int:
+        res = 1
+        for i in range(1, len(word)):
+            if word[i] == word[i - 1]:
+                res += 1
+        return res
 
 """
 
