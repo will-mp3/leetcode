@@ -55,5 +55,13 @@ class Solution:
         return (total - invalid + self.MOD) % self.MOD
 
 """
-
+this solution uses dynamic programming to count the number of possible original strings that Alice might have intended to type.
+The approach involves counting the number of groups of consecutive characters in the input string and then calculating the total number of possible original strings based on these groups.
+The function first counts the groups of consecutive characters in the input string and stores their lengths in a list called `groups`. 
+It then calculates the total number of original strings by multiplying the lengths of these groups.
+If the number of groups is less than k, it returns the total possible strings.
+Otherwise, it uses a dynamic programming approach to calculate the number of valid strings of length at least k by iterating through the groups 
+and updating a dp array that keeps track of the number of valid strings for each length.
+Finally, it subtracts the invalid strings from the total and returns the result modulo 10^9 + 7.
+The time complexity of this solution is O(n * k), where n is the length of the input string and k is the given positive integer. The space complexity is O(k) due to the dp array used for dynamic programming.
 """
