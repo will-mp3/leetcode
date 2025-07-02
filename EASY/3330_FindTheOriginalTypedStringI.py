@@ -17,5 +17,10 @@ class Solution:
         return res
 
 """
-
+this solution is a one pass function that checks to see if a character has been repeated.
+to accomplish this, we iterate through the string and check if the current character is the same as the previous character.
+if it is, we increment the result by 1.
+notice that we start the loop at index 1 since we are checking the previous character.
+the time complexity is O(n) where n is the length of the string.
+the space complexity is O(1) since we are only using a few variables.
 """
