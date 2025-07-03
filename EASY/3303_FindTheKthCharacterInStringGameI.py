@@ -31,5 +31,7 @@ class Solution:
         return word[k - 1]
 
 """
-
+this solution works by modifying our existing string letter by letter.
+while the length of our string is less than k we loop through the present values.
+each time we add the associated next character either using chr(ord()) or z if the character is a.
 """
