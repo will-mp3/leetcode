@@ -14,7 +14,21 @@ Return the value of the kth character in word, after enough operations have been
 Note that the character 'z' can be changed to 'a' in the operation.
 """
 
-
+class Solution:
+    def kthCharacter(self, k: int) -> str:
+        word = "a"
+        
+        while len(word) < k:
+            cur = ""
+            for char in word:
+                # wrap around 'z' to 'a'
+                if char == 'z':
+                    cur += 'a'
+                else:
+                    cur += chr(ord(char) + 1)
+            word += cur
+        
+        return word[k - 1]
 
 """
 
