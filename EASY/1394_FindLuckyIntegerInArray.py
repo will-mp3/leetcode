@@ -19,5 +19,8 @@ class Solution:
         return res
 
 """
-
+this solution iterates through the array to count the frequency of each integer using a dictionary.
+It then checks if any integer's value matches its frequency and keeps track of the largest lucky integer found. 
+If no lucky integer is found, it returns -1.
+This approach has a time complexity of O(n) where n is the length of the input array
 """
