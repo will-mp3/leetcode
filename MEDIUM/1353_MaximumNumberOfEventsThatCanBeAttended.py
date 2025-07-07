@@ -37,5 +37,9 @@ class Solution:
         return result
 
 """
-
+this solution uses a greedy approach with a min-heap to efficiently track the end times of events.
+It sorts the events by their start times and iterates through them, adding their end times to a min-heap.
+For each day, it pops the earliest ending event from the heap, which allows the algorithm to attend the maximum number of events without overlapping.
+The time complexity is O(n log n) due to the sorting and heap operations, where n is the number of events.
+The space complexity is O(n) for the min-heap used to store the end times of events.
 """
