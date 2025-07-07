@@ -49,5 +49,10 @@ class FindSumPairs:
 # param_2 = obj.count(tot)
 
 """
-
+this solution implements a data structure that supports two operations: adding a value to an element in the second array and counting pairs of indices from the two arrays that sum to a given total.
+The `FindSumPairs` class initializes with two integer arrays, `nums1` and `nums2`, and maintains a mapping of values in `nums2` to their counts for efficient lookups.
+The `add` method updates an element in `nums2` and adjusts the counts in the mapping accordingly.
+The `count` method iterates through `nums1` and checks how many times the complement (i.e., `tot - num`) exists in the mapping of `nums2`, summing these counts to return the total number of valid pairs.
+This approach has a time complexity of O(n) for the `count` method, where n is the length of `nums1`, and O(1) for the `add` method, making it efficient for the required operations.
+The space complexity is O(m) where m is the number of unique elements in `nums2`. 
 """
