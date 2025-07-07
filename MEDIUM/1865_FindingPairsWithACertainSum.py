@@ -10,7 +10,43 @@ void add(int index, int val) Adds val to nums2[index], i.e., apply nums2[index] 
 int count(int tot) Returns the number of pairs (i, j) such that nums1[i] + nums2[j] == tot.
 """
 
+class FindSumPairs:
 
+    def __init__(self, nums1: List[int], nums2: List[int]):
+        # arrays for modification
+        self.nums1 = nums1
+        self.nums2 = nums2
+
+        # map for quick access to value & counts
+        self.map = {}
+        for num in self.nums2:
+            self.map[num] = 1 + self.map.get(num, 0)
+
+    def add(self, index: int, val: int) -> None:
+        # get original element
+        num = self.nums2[index]
+
+        # update base array
+        self.nums2[index] = self.nums2[index] + val
+
+        # decrement count of old value, increment count of new value
+        self.map[num] -= 1
+        self.map[self.nums2[index]] = 1 + self.map.get(self.nums2[index], 0)
+        
+    def count(self, tot: int) -> int:
+        count = 0
+
+        # two sum
+        for num in self.nums1:
+            if tot - num in self.map:       
+                count += self.map[tot - num]
+        return count
+
+
+# Your FindSumPairs object will be instantiated and called as such:
+# obj = FindSumPairs(nums1, nums2)
+# obj.add(index,val)
+# param_2 = obj.count(tot)
 
 """
 
