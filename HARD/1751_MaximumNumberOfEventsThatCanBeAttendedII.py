@@ -30,5 +30,11 @@ class Solution:
         return dfs(0, k)
 
 """
-
+this code defines a class Solution with a method maxValue that calculates the maximum sum of values from attending events, given constraints on the number of events and their timings. 
+It uses dynamic programming and binary search to efficiently find the optimal solution.
+The code sorts the events, initializes a DP table, and uses a recursive function with memoization to compute the maximum value. 
+It uses binary search to find the next available event after attending a current event, ensuring that the solution is efficient even for larger inputs.
+Time Complexity: O(n^2 * k)
+Space Complexity: O(n * k)
+where n is the number of events and k is the maximum number of events that can be attended.
 """
