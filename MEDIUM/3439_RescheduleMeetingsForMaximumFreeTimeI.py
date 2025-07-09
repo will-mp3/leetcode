@@ -13,7 +13,23 @@ Return the maximum amount of free time possible after rearranging the meetings.
 Note that the meetings can not be rescheduled to a time outside the event.
 """
 
+class Solution:
+    def maxFreeTime(self, eventTime: int, k: int, startTime: List[int], endTime: List[int]) -> int:
+        n = len(startTime)
+        prefixSum = [0] * (n + 1)
+        res = 0
 
+        for i in range(n):
+            prefixSum[i + 1] = prefixSum[i] + (endTime[i] - startTime[i])
+        
+        print(prefixSum)
+        
+        for i in range(k - 1, n):
+            right = eventTime if i == n - 1 else startTime[i + 1]
+            left = 0 if i == k - 1 else endTime[i - k]
+            res = max(res, right - left - (prefixSum[i + 1] - prefixSum[i - k + 1]))
+
+        return res
 
 """
 
