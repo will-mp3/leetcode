@@ -32,5 +32,12 @@ class Solution:
         return res
 
 """
-
+this code defines a class Solution with a method maxFreeTime that calculates the maximum amount of free time possible after rearranging meetings during an event.
+It uses a prefix sum array to efficiently compute the total duration of meetings and iterates through possible meeting arrangements to find the maximum free time.
+The method considers the constraints of rescheduling meetings while maintaining their order and non-overlapping nature, and returns the maximum free time achievable.
+Time Complexity: O(n)
+Space Complexity: O(n)
+where n is the number of meetings.
+This solution efficiently computes the maximum free time by leveraging prefix sums and iterating through the meetings,
+ensuring that the solution is optimal and runs in linear time relative to the number of meetings.
 """
