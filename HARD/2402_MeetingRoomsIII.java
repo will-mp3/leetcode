@@ -58,7 +58,10 @@ class Solution {
     }
 }
 
-
 """
-
+this code defines a solution to the problem of scheduling meetings in rooms, ensuring that the room with the lowest number is used first, and handling delays when no rooms are available. 
+The algorithm efficiently tracks room availability and counts the number of meetings held in each room, ultimately returning the room that hosted the most meetings.
+The code uses a greedy approach to allocate rooms based on availability and meeting start times, ensuring that the room with the lowest number is prioritized. 
+It maintains an array to track when each room will be available and counts the number of meetings held in each room. 
+The final result is determined by finding the room with the highest meeting count, returning the room number with the lowest index in case of ties.  
 """
