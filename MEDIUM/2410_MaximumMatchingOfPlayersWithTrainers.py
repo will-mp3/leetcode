@@ -8,7 +8,21 @@ Additionally, the ith player can be matched with at most one trainer, and the jt
 Return the maximum number of matchings between players and trainers that satisfy these conditions.
 """
 
+class Solution:
+    def matchPlayersAndTrainers(self, players: List[int], trainers: List[int]) -> int:
+        trainers.sort()
+        players.sort()
+        p, t, res = 0, 0, 0
 
+        while p < len(players) and t < len(trainers):
+            if players[p] <= trainers[t]:
+                res += 1
+                t += 1
+                p += 1
+            else:
+                t += 1
+
+        return res
 
 """
 
