@@ -7,6 +7,7 @@ Return the decimal value of the number in the linked list.
 The most significant bit is at the head of the linked list.
 """
 
+# Python interpretation
 # Definition for singly-linked list.
 class ListNode:
     def __init__(self, val=0, next=None):
@@ -22,6 +23,32 @@ class Solution:
             head = head.next
         
         return int(binStr, 2)
+    
+
+# Java interpretation
+"""
+Definition for singly-linked list.
+public class ListNode {
+    int val;
+    ListNode next;
+    ListNode() {}
+    ListNode(int val) { this.val = val; }
+    ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+}
+
+class Solution {
+    public int getDecimalValue(ListNode head) {
+        String binStr = "";
+
+        while(head != null) {
+            binStr = binStr + String.valueOf(head.val);
+            head = head.next;
+        }
+
+        return Integer.parseInt(binStr, 2);
+    }
+}
+"""
 
 """
 this solution uses a simple while loop.
