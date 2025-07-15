@@ -43,5 +43,9 @@ class Solution {
 }
 
 /*
- 
+ this solution checks if the word is valid based on the given criteria.
+It iterates through each character in the word, checking if it is a letter or digit,
+and whether it contains at least one vowel and one consonant.
+If the word meets all the conditions, it returns true; otherwise, it returns false.
+The solution uses a single loop to check all conditions, making it efficient with a time complexity of O(n), where n is the length of the word.
  */
