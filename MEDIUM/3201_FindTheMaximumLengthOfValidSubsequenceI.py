@@ -20,5 +20,8 @@ class Solution:
         return res
 
 """
-
+this solution uses a simple for loop.
+we iterate through all possible patterns of even and odd numbers, and for each pattern we count how many numbers in the input array match the pattern.
+we keep track of the maximum count found across all patterns and return it as the result.
+this solution runs in O(n) linear time, where n is the length of the input array.
 """
