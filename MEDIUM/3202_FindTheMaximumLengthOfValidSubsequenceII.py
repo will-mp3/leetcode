@@ -6,7 +6,16 @@ A subsequence sub of nums with length x is called valid if it satisfies:
 Return the length of the longest valid subsequence of nums.
 """
 
-
+class Solution:
+    def maximumLength(self, nums: List[int], k: int) -> int:
+        dp = [[0] * k for _ in range(k)]
+        res = 0
+        for num in nums:
+            num %= k
+            for prev in range(k):
+                dp[prev][num] = dp[num][prev] + 1
+                res = max(res, dp[prev][num])
+        return res
 
 """
 
