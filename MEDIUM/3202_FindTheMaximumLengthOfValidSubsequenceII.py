@@ -18,5 +18,9 @@ class Solution:
         return res
 
 """
-
+this solution uses dynamic programming.
+we create a 2D array dp where dp[i][j] represents the length of the longest valid subsequence ending with the i-th and j-th elements.
+we iterate through each number in nums, and for each number, we update the dp array based on the previous values.
+we keep track of the maximum length found across all pairs of indices and return it as the result.
+this solution runs in O(n * k^2) time, where n is the length of the input array and k is the given integer.
 """
