@@ -70,5 +70,12 @@ class Solution:
         return result
 
 """
-
+this code defines a solution to the problem of deleting duplicate folders in a file system. 
+It constructs a tree structure from the given paths, computes signatures for each folder based on its subfolders, counts occurrences of each signature, and then collects paths of folders that are not marked for deletion.
+The `Node` class represents a folder in the file system, and the `Solution` class contains the method `deleteDuplicateFolder` which implements the logic to identify and delete duplicate folders based on their signatures. 
+The method uses depth-first search (DFS) to traverse the tree, compute signatures, and build the result list of remaining folders.
+The final output is a list of lists, where each inner list represents a path to a folder that remains after the deletion of duplicate folders. 
+The paths are returned in any order, as specified in the problem statement.
+# Time Complexity: O(N log N), where N is the total number of folders in the file system. 
+# This is due to the sorting operations performed during the DFS traversal and while constructing the result paths.
 """
