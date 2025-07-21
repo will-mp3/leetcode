@@ -27,5 +27,9 @@ class Solution:
         return newStr
 
 """
-
+this code defines a solution to the problem of making a string fancy by ensuring that no three consecutive characters are equal.
+The `makeFancyString` method iterates through the input string `s`, keeping track of the current character and its count of consecutive occurrences. 
+If a character appears more than twice in a row, it is skipped. The resulting string is built up in `newStr`, which is returned as the final output. 
+This approach ensures that the final string meets the criteria for being fancy, while maintaining the order of characters from the original string.
+The time complexity of this solution is O(n), where n is the length of the input string s, as it processes each character exactly once.
 """
