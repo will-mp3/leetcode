@@ -23,5 +23,9 @@ class Solution:
         return res
 
 """
-
+this code defines a solution to the problem of finding the maximum score obtainable by erasing a subarray of unique elements from an array of positive integers.
+The `maximumUniqueSubarray` method uses a sliding window approach with two pointers (`l` and `r`) to maintain a window of unique elements. 
+It keeps track of the current sum of the elements in the window (`cur`) and updates the maximum score (`res`) whenever a new element is added to the window. 
+If a duplicate element is encountered, it shrinks the window from the left until the duplicate is removed, ensuring that all elements in the window remain unique.
+The time complexity of this solution is O(n), where n is the length of the input array `nums`, as each element is processed at most twice (once when added and once when removed).
 """
