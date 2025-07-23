@@ -53,5 +53,10 @@ class Solution:
         return "".join(stack)
 
 """
-
+this code defines a solution to the problem of maximizing points by removing specific substrings from a given string. 
+The `maximumGain` method determines the maximum points that can be obtained by strategically removing "ab" and "ba" substrings based on their associated point values. 
+The `remove_substring` method is used to efficiently remove these substrings from the input string using a stack-based approach.
+The solution is designed to handle the operations in two passes, first removing the substring that yields the higher points and then the one that yields the lower points, ensuring that the maximum score is achieved. 
+The use of a stack allows for efficient removal of the target substrings while maintaining the order of characters in the original string.
+The time complexity of this solution is O(n), where n is the length of the input string, as each character is processed once in the stack-based removal process.
 """
