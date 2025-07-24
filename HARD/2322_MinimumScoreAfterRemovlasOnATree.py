@@ -82,5 +82,11 @@ class Solution:
         return min_score
 
 """
-
+This code defines a solution to the problem of finding the minimum score after removing two edges from a tree.
+The `minimumScore` method calculates the minimum score by performing a depth-first search (DFS)
+to compute the XOR values of subtrees and their descendants.
+It iterates through all pairs of nodes to simulate edge removals and calculates the score based on the XOR values of the resulting components.
+The solution efficiently handles the tree structure and ensures that all possible pairs of edge removals are considered.
+The time complexity is O(n^2) in the worst case due to the nested loops iterating through pairs of nodes, but the DFS runs in O(n).
+This approach ensures that the minimum score is found by evaluating all valid edge removal combinations.
 """
