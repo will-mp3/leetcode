@@ -8,7 +8,21 @@ The sum of the elements in the subarray is maximized.
 Return the maximum sum of such a subarray.
 """
 
-
+class Solution:
+    def maxSum(self, nums: List[int]) -> int:
+        seen = []
+        for num in nums:
+            if num not in seen:
+                seen.append(num)
+        seen.sort()
+        if len(seen) == 1:
+            return seen[0]
+        else:
+            res = sum(seen)
+            for i in range(len(seen) - 1):
+                if res - seen[i] > res:
+                    res -= seen[i]
+        return res
 
 """
 
