@@ -25,5 +25,12 @@ class Solution:
         return res
 
 """
-
+this solution defines a method to find the maximum sum of a subarray with unique elements from a given integer array.
+The `maxSum` method first creates a list of unique elements from the input array, sorts it, and then calculates the sum of these unique elements.
+If there is only one unique element, it returns that element.
+Otherwise, it iterates through the unique elements and checks if removing any element would yield a higher sum, updating the result accordingly.
+The final result is the maximum sum of the unique subarray.
+The solution efficiently handles the uniqueness constraint and maximizes the sum by leveraging sorting and iteration.
+The time complexity is O(n log n) due to sorting, where n is the number of unique elements in the input array.
+This ensures that the solution is efficient even for larger input sizes.
 """
