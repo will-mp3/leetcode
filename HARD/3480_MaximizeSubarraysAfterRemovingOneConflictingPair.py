@@ -47,5 +47,10 @@ class Solution:
         return ans + max(bonus)
 
 """
-
+This code defines a solution to the problem of maximizing the number of valid subarrays after removing one conflicting pair from a list of pairs.
+The `maxSubarrays` method processes the conflicting pairs and calculates the maximum number of valid subarrays by maintaining a running count of forbidden starts and potential gains from removing conflicts.
+The solution efficiently groups conflicting pairs and uses a single pass to compute the base score and potential gains, ensuring that the maximum number of valid subarrays is returned.
+The time complexity is O(n + m), where n is the length of the array and m is the number of conflicting pairs, making it efficient for larger inputs.
+The use of a list to track the top two forbidden starts allows for quick updates and calculations, ensuring that the solution remains optimal.
+This approach effectively balances the constraints imposed by conflicting pairs while maximizing the number of valid subarrays.
 """
