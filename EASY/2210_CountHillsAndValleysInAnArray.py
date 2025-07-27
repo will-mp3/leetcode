@@ -23,5 +23,11 @@ class Solution:
         return res
 
 """
-
+This code defines a solution to count the number of hills and valleys in a given integer array.
+The `countHillValley` method iterates through the array, checking for hills and valleys by comparing the current element with its neighbors.
+A hill is identified when the current element is greater than both its neighbors, while a valley is identified when it is less than both neighbors.
+The method maintains a pointer `l` to track the last non-equal neighbor, ensuring that adjacent equal elements do not falsely contribute to hills or valleys.
+The time complexity is O(n), where n is the length of the input array, making it efficient for larger inputs.
+The solution effectively counts the hills and valleys by leveraging simple comparisons and a single pass through the array.
+The final result is returned as the count of hills and valleys found in the input array.
 """
