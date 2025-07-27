@@ -8,7 +8,19 @@ Note that for an index to be part of a hill or valley, it must have a non-equal 
 Return the number of hills and valleys in nums.
 """
 
+class Solution:
+    def countHillValley(self, nums: List[int]) -> int:
+        res = 0
+        l = 0
 
+        for i in range(1, len(nums) - 1):
+            if nums[i] != nums[i + 1]:
+                if (nums[i] > nums[l] and nums[i] > nums[i + 1]) or \
+                   (nums[i] < nums[l] and nums[i] < nums[i + 1]):
+                    res += 1
+                l = i
+
+        return res
 
 """
 
