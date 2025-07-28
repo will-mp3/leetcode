@@ -35,5 +35,15 @@ class Solution:
         return count_without + count_with
 
 """
-
+This code defines a solution to count the number of subsets of an integer array that yield the maximum bitwise OR.
+The `countMaxOrSubsets` method calculates the maximum bitwise OR value of the input array and then uses a recursive helper method `_count_subsets` to count the number of subsets that achieve this maximum OR value.
+The helper method explores both including and excluding each element in the array, recursively calculating the OR value and checking against the target maximum OR.
+The base case of the recursion checks if the end of the array is reached, returning 1 if the current OR matches the target OR, or 0 otherwise.
+The time complexity of this solution is O(2^n), where n is the length of the input array, as it explores all possible subsets.
+This approach ensures that all combinations are considered, and the final count of valid subsets is returned.
+The solution effectively handles the problem of counting subsets with a specific bitwise OR by leveraging recursion and bitwise operations.
+The use of bitwise OR operations allows for efficient calculation of the maximum OR value and the subsets that achieve it.
+The recursive structure ensures that all possible combinations of elements are explored, leading to an accurate count of valid subsets.
+The solution is designed to be clear and concise, making it easy to understand the logic behind counting subsets with the maximum bitwise OR.
+The final result is returned as the total count of subsets that yield the maximum OR value, providing a complete solution to the problem.
 """
