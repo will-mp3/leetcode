@@ -39,5 +39,10 @@ class Solution:
         return max_length
 
 """
-
+This code defines a solution to find the length of the longest subarray with the maximum bitwise AND.
+The `longestSubarray` method first determines the maximum value in the input array, which represents the maximum possible bitwise AND (k).
+It then iterates through the array to find the length of the longest contiguous subarray where all elements are equal to k.
+The method maintains a count of the current length of such subarrays and updates the maximum length found so far.
+Finally, it returns the maximum length of the subarray that meets the criteria.
+The time complexity of this solution is O(n), where n is the length of the input array, as it requires a single pass to find the maximum value and another pass to determine the longest subarray.
 """
