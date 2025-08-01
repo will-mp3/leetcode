@@ -22,5 +22,11 @@ class Solution:
         return res
 
 """
-
+This code defines a solution to generate the first numRows of Pascal's triangle.
+The `generate` method initializes the triangle with the first row containing a single element, 1. 
+It then iterates from 1 to numRows - 1, constructing each subsequent row based on the previous row.
+For each row, it initializes a new list with zeros, sets the first and last elements to 1, and fills in the middle elements by summing the two elements directly above from the previous row.
+Finally, it appends the constructed row to the result list and returns the complete triangle.
+The time complexity of this solution is O(n^2), where n is the number of rows, as each row requires O(i) operations to construct, leading to a total of O(1 + 2 + ... + n) operations.
+This approach efficiently builds Pascal's triangle iteratively, ensuring that all rows are correctly formed based on the properties of the triangle.
 """
