@@ -25,5 +25,11 @@ class Solution:
         return res
 
 """
-
+This code defines a solution to maximize the total number of fruits harvested from given positions on an infinite x-axis, considering movement constraints.
+The `maxTotalFruits` method uses a two-pointer technique to efficiently calculate the maximum fruits that can be harvested within the allowed steps. 
+It iterates through the list of fruits, maintaining a running total of fruits collected from the current range defined by the left and right pointers.
+If the total distance from the starting position to the leftmost and rightmost positions exceeds k, it adjusts the left pointer to reduce the total until the condition is satisfied.
+The maximum total is updated at each step, ensuring that the solution captures the optimal range of fruits that can be harvested.
+The time complexity of this solution is O(n), where n is the number of fruit positions, as it processes each position at most twice (once by each pointer).
+This approach efficiently handles the problem of maximizing fruit collection while adhering to movement constraints, providing a clear and effective solution.
 """
