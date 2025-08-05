@@ -9,7 +9,24 @@ Once you reach a tree with fruit that cannot fit in your baskets, you must stop.
 Given the integer array fruits, return the maximum number of fruits you can pick.
 """
 
+class Solution:
+    def totalFruit(self, fruits: List[int]) -> int:
+        start = 0
+        res = 0
+        count = defaultdict(int)
 
+        for end in range(len(fruits)):
+            count[fruits[end]] += 1
+
+            while len(count) > 2:
+                count[fruits[start]] -= 1
+                if count[fruits[start]] == 0:
+                    del count[fruits[start]]
+                start += 1
+
+            res = max(res, end - start + 1)
+
+        return res
 
 """
 
