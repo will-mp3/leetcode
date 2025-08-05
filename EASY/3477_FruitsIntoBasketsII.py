@@ -9,7 +9,17 @@ If a fruit type cannot be placed in any basket, it remains unplaced.
 Return the number of fruit types that remain unplaced after all possible allocations are made.
 """
 
+class Solution:
+    def numOfUnplacedFruits(self, fruits: List[int], baskets: List[int]) -> int:
+        res = 0
 
+        for fruit in fruits:
+            for basket in baskets:
+                if fruit <= basket:
+                    baskets.remove(basket)
+                    break
+
+        return len(baskets)
 
 """
 
