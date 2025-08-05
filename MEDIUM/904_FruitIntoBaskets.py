@@ -29,5 +29,10 @@ class Solution:
         return res
 
 """
-
+This code defines a solution to the problem of collecting the maximum number of fruits from a row of trees while adhering to the constraints of using two baskets for different types of fruits.
+The `totalFruit` method uses a sliding window approach to maintain a count of the types of fruits currently in the baskets. 
+It iterates through the array of fruits, expanding the window by moving the `end` pointer and updating the count of fruits. 
+If the count exceeds two types, it shrinks the window from the left by moving the `start` pointer until only two types remain.
+The maximum number of fruits collected is updated at each step, and finally, the method returns this maximum value. 
+The time complexity is O(n), where n is the length of the `fruits` array, as each element is processed at most twice (once when added and once when removed).
 """
