@@ -24,5 +24,10 @@ class Solution:
         return False
 
 """
-
+This code defines a solution to check if the digits of a given integer n can be reordered to form a power of two.
+The `reorderedPowerOf2` method generates all possible permutations of the digits of n and checks if any of these permutations can form a power of two. 
+It uses the `permutations` function from the `itertools` module to generate all combinations of the digits.
+For each permutation, it converts the tuple of characters back to an integer and checks if it is a power of two by counting the number of '1's in its binary representation. 
+If any permutation results in a valid power of two, the method returns True; otherwise, it returns False.
+The time complexity of this solution is O(n!), where n is the number of digits in n, due to the generation of permutations, which can be computationally expensive for larger numbers.
 """
