@@ -28,5 +28,10 @@ class Solution:
         return dp[n]
 
 """
-
+This code defines a solution to count the number of ways to express a given integer n as the sum of unique integers raised to the power of x.
+The `numberOfWays` method first generates a list of powers of integers raised to x until the next power exceeds n. 
+It then initializes a dynamic programming array `dp` where `dp[i]` represents the number of ways to express the integer i using the generated powers.
+The method iterates through each power and updates the `dp` array in reverse order to ensure that each power is only used once in each combination. 
+Finally, it returns the value of `dp[n]`, which contains the number of ways to express n as required, modulo 10^9 + 7.
+The time complexity of this solution is O(n * k), where n is the target integer and k is the number of unique powers considered.
 """
