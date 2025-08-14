@@ -30,5 +30,10 @@ class Solution:
         return str(res) * 3 if res != float("-inf") else ""
 
 """
-
+This code defines a solution to find the largest "good" integer in a given string num.
+The `largestGoodInteger` method iterates through each character in the string, keeping track of the current character and its count. 
+If the current character matches the previous one, it increments the count; otherwise, it resets the count to 1. 
+When the count reaches 3, it checks if the integer value of the character is greater than the current maximum found (`res`) and updates `res` accordingly. 
+Finally, it returns the largest good integer as a string repeated three times or an empty string if no good integer was found.
+The time complexity of this solution is O(n), where n is the length of the input string num.
 """
