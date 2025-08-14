@@ -11,7 +11,23 @@ A substring is a contiguous sequence of characters within a string.
 There may be leading zeroes in num or a good integer.
 """
 
+class Solution:
+    def largestGoodInteger(self, num: str) -> str:
+        res, count = float("-inf"), 0
+        prev = None
 
+        for char in num:
+            if char == prev:
+                count += 1
+            else:
+                count = 1
+
+            if count == 3:
+                res = max(res, int(char))
+            
+            prev = char
+        
+        return str(res) * 3 if res != float("-inf") else ""
 
 """
 
