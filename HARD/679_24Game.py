@@ -41,5 +41,11 @@ class Solution:
         return dfs([float(x) for x in cards])
 
 """
-
+This code defines a solution to determine if it is possible to arrange four given integers (cards) using basic arithmetic operations to evaluate to 24.
+The `judgePoint24` method uses a depth-first search (DFS) approach to explore all possible combinations of the numbers and operations. 
+It defines a helper function `dfs` that takes a list of numbers and recursively checks if any combination can yield 24.
+The function checks all pairs of numbers, applies the four basic operations (addition, subtraction, multiplication, and division), and recursively calls itself with the new list of numbers after applying the operation. 
+It uses a small epsilon value (EPS) to handle floating-point precision issues when comparing to 24.
+If it finds a valid combination that evaluates to 24, it returns True; otherwise, it returns False.
+The time complexity of this solution is exponential in nature due to the recursive exploration of combinations.
 """
