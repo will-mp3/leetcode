@@ -17,9 +17,8 @@ class Solution:
                     
                     # if upper edges are greater than or equal to 1, increment cell & result by the minimum of their values
                     if matrix[i - 1][j - 1] >= 1 and matrix[i][j - 1] >= 1 and matrix[i - 1][j] >= 1:
-                        toAdd = min(matrix[i - 1][j - 1], matrix[i][j - 1], matrix[i - 1][j])
-                        matrix[i][j] += toAdd
-                        res += toAdd
+                        matrix[i][j] += min(matrix[i - 1][j - 1], matrix[i][j - 1], matrix[i - 1][j])
+                        res += matrix[i][j] - 1
         
         return res
 
