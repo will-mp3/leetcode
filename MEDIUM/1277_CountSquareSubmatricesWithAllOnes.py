@@ -24,5 +24,11 @@ class Solution:
         return res
 
 """
-
+This code defines a solution to count the number of square submatrices filled with all ones in a given binary matrix.
+The `countSquares` method initializes a result variable `res` to zero. It then iterates through each cell in the matrix. 
+If the current cell contains a 1, it increments `res` by 1, indicating that at least one square submatrix (of size 1x1) exists at that cell.
+If the cell is not on the first row or first column, it checks the values of the cells directly above, to the left, and diagonally above-left. 
+If these cells also contain ones, it calculates the minimum of these three values and adds it to the current cell's value, effectively counting larger square submatrices that can be formed with this cell as the bottom-right corner.
+Finally, it returns the total count of square submatrices filled with ones.
+The time complexity of this solution is O(m * n), where m is the number of rows and n is the number of columns in the matrix, as it processes each cell exactly once
 """
