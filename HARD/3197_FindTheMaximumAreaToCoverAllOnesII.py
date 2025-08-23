@@ -49,5 +49,9 @@ class Solution:
         return [[A[i][j] for i in range(n-1, -1, -1)] for j in range(m)]
 
 """
-
+This code defines a solution to find the minimum possible sum of the areas of three non-overlapping rectangles that cover all the 1's in a given 2D binary array grid.
+The `minimumSum` method iterates through four possible orientations of the grid (original and three rotations). For each orientation, it calculates the minimum area required to cover all 1's in the grid by splitting it into three parts either horizontally or vertically.
+The `minimumArea` method calculates the minimum area of a rectangle that can cover all the 1's in a given subgrid. It finds the leftmost, rightmost, topmost, and bottommost positions of 1's in the subgrid and computes the area of the rectangle formed by these boundaries.
+The `rotate` method rotates the grid 90 degrees clockwise.
+The time complexity of this solution is O(n^3 * m^3) in the worst case, where n is the number of rows and m is the number of columns in the grid, due to the nested loops and area calculations for each subgrid.
 """
