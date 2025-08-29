@@ -14,7 +14,9 @@ The number of flowers y in the second lane must be in the range [1,m].
 Return the number of possible pairs (x, y) that satisfy the conditions mentioned in the statement.
 """
 
-
+class Solution:
+    def flowerGame(self, n: int, m: int) -> int:
+        return n * m // 2
 
 """
 
