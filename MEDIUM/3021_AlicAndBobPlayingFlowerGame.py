@@ -19,5 +19,10 @@ class Solution:
         return n * m // 2
 
 """
-
+This code defines a solution to determine the number of possible pairs (x, y) of flowers in two lanes such that Alice wins the game.
+The `flowerGame` method takes two integers, n and m, which represent the maximum number of flowers in the first and second lanes, respectively.
+The key observation is that Alice can only guarantee a win if the total number of flowers (x + y) is odd. This is because Alice takes the first turn, and if the total number of flowers is odd, she will always be the one to pick the last flower, thus winning the game.
+To find the number of valid pairs (x, y) where 1 <= x <= n and 1 <= y <= m, the method calculates the total number of pairs (n * m) and divides it by 2 to account for the pairs where the sum is even (which would result in Bob winning).
+Finally, it returns the number of pairs where Alice wins.
+The time complexity of this solution is O(1) since it involves only a few arithmetic operations, and the space complexity is also O(1) as it uses a constant amount of space.
 """
