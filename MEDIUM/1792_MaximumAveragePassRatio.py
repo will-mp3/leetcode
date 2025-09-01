@@ -11,6 +11,28 @@ The average pass ratio is the sum of pass ratios of all the classes divided by t
 Return the maximum possible average pass ratio after assigning the extraStudents students. Answers within 10-5 of the actual answer will be accepted.
 """
 
+import heapq
+from typing import List
+
+class Solution:
+    def maxAverageRatio(self, classes: List[List[int]], extraStudents: int) -> float:
+        # Function to calculate gain if we add one student
+        def gain(p, t):
+            return (p + 1) / (t + 1) - p / t
+
+        # Build max heap of (-gain, passes, total)
+        heap = [(-gain(p, t), p, t) for p, t in classes]
+        heapq.heapify(heap)
+
+        # Assign extra students
+        for _ in range(extraStudents):
+            g, p, t = heapq.heappop(heap)
+            p, t = p + 1, t + 1
+            heapq.heappush(heap, (-gain(p, t), p, t))
+
+        # Compute final average
+        total = sum(p / t for _, p, t in heap)
+        return total / len(classes)
 
 
 """
