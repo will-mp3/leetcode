@@ -36,5 +36,11 @@ class Solution:
 
 
 """
-
+This code defines a solution to maximize the average pass ratio of classes after assigning extra students who are guaranteed to pass.
+The `maxAverageRatio` method takes a list of classes, where each class is represented by a list of two integers [passi, totali], and an integer extraStudents representing the number of extra students to be assigned.
+A helper function `gain` is defined to calculate the increase in pass ratio if one extra student is added to a class. The gain is calculated as the difference between the new pass ratio and the current pass ratio.
+A max heap is constructed using a list comprehension that stores tuples of (-gain, passes, total) for each class. The negative gain is used because Python's `heapq` implements a min-heap by default, and we want to simulate a max-heap.
+The method then iterates for the number of extra students, popping the class with the highest gain from the heap, updating its passes and total, and pushing it back into the heap with the new gain.
+Finally, the method computes the final average pass ratio by summing the pass ratios of all classes in the heap and dividing by the number of classes. It returns this average.
+The time complexity of this solution is O((n + k) log n), where n is the number of classes and k is the number of extra students, due to the heap operations. The space complexity is O(n) for storing the heap.
 """
