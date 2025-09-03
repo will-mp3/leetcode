@@ -16,12 +16,12 @@ class Solution:
         res = 0
 
         for i in range(n - 1):
-            minY = 1 << 31  # like +infinity
+            minY = float('inf') 
             for j in range(i + 1, n):
-                # condition: points[i] is upper-left of points[j]
+                # points[i] is upper-left of points[j]
                 if minY > points[j][1] >= points[i][1]:
                     res += 1
-                    minY = points[j][1]  # update "lowest seen" y
+                    minY = points[j][1]
         return res
 
 """
