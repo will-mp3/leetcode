@@ -28,7 +28,8 @@ class Solution:
 This code defines a solution to count the number of pairs of points (A, B) in a 2D plane such that A is on the upper left side of B and there are no other points in the rectangle formed by A and B.
 The `numberOfPairs` method first sorts the list of points in descending order by their x-coordinates and in ascending order by their y-coordinates. This sorting ensures that when iterating through the points, we can efficiently check the conditions for the pairs.
 It initializes a variable `res` to keep track of the count of valid pairs. The outer loop iterates through each point as point A, and the inner loop iterates through the subsequent points as point B.
-For each pair of points, it checks if point B is on the lower right side of point A (i.e., B's y-coordinate is greater than or equal to A's y-coordinate and less than the minimum y-coordinate seen so far). If this condition is met, it increments the count `res` and updates the minimum y-coordinate seen.
+For each pair of points, it checks if point B is on the lower right side of point A (i.e., B's y-coordinate is greater than or equal to A's y-coordinate and less than the minimum y-coordinate seen so far). 
+If this condition is met, it increments the count `res` and updates the minimum y-coordinate seen.
 Finally, it returns the total count of valid pairs.
 The time complexity of this solution is O(n^2), where n is the number of points, due to the nested loops. The space complexity is O(1) as it uses a constant amount of additional space.
 """
