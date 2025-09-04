@@ -14,7 +14,13 @@ Return 0 if both arrive at the same time.
 Return the result accordingly.
 """
 
-
+class Solution:
+    def findClosest(self, x: int, y: int, z: int) -> int:
+        xd, yd = abs(z - x), abs(z - y)
+        if xd == yd:
+            return 0
+        else:
+            return 1 if xd < yd else 2
 
 """
 
