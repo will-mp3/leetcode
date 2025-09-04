@@ -23,5 +23,11 @@ class Solution:
             return 1 if xd < yd else 2
 
 """
-
+This code defines a solution to determine which of two people, located at positions x and y on a number line, will reach a third person located at position z first, given that both move towards z at the same speed.
+The `findClosest` method calculates the absolute distances from Person 1 (at position x) and Person 2 (at position y) to Person 3 (at position z) using the `abs` function.
+It then compares these distances:
+- If the distances are equal, it returns 0, indicating that both persons will arrive at the same time.
+- If Person 1's distance is less than Person 2's distance, it returns 1, indicating that Person 1 will arrive first.
+- Otherwise, it returns 2, indicating that Person 2 will arrive first.
+The time complexity of this solution is O(1), as it involves a constant number of arithmetic operations and comparisons. The space complexity is also O(1) since it uses a fixed amount of additional space.
 """
