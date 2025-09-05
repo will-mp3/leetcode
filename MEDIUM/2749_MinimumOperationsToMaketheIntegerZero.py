@@ -8,7 +8,16 @@ Return the integer denoting the minimum number of operations needed to make num1
 If it is impossible to make num1 equal to 0, return -1.
 """
 
-
+class Solution:
+    def makeTheIntegerZero(self, num1: int, num2: int) -> int:
+        k = 1
+        while True:
+            x = num1 - num2 * k
+            if x < k:
+                return -1
+            if k >= x.bit_count():
+                return k
+            k += 1
 
 """
 
