@@ -20,5 +20,9 @@ class Solution:
             k += 1
 
 """
-
+This code defines a solution to determine the minimum number of operations required to reduce a given integer `num1` to zero by repeatedly subtracting `2^i + num2` for some integer `i` in the range [0, 60]. If it is impossible to make `num1` equal to zero, the function returns -1.
+The `makeTheIntegerZero` method initializes a counter `k` to track the number of operations. It enters a loop where it calculates the value `x` as `num1 - num2 * k`. The loop continues until one of the following conditions is met:
+- If `x` becomes less than `k`, it returns -1, indicating that it is impossible to reach zero.
+- If the number of set bits in `x` (calculated using `x.bit_count()`) is less than or equal to `k`, it returns `k`, indicating the minimum number of operations needed.
+The time complexity of this solution is O(k), where k is the number of operations needed, and the space complexity is O(1) since it uses a fixed amount of additional space.
 """
