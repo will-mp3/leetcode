@@ -43,5 +43,14 @@ class Solution:
         return min_users_to_teach
 
 """
-
+This code defines a solution to determine the minimum number of users that need to be taught a new language so that all friends in a social network can communicate with each other. 
+The function `minimumTeachings` takes three parameters: an integer `n` representing the number of languages, a list of lists `languages` where each sublist contains the languages known by each user, and a list of lists `friendships` where each sublist contains a pair of users who are friends.
+The approach used in this solution can be broken down into two main steps:
+1. Identify Users Who Can't Communicate: The code iterates through each friendship pair and checks if the two users in the pair share at least one common language. 
+If they do not, both users are added to a set called `users_to_teach`, which keeps track of all users who need to learn a new language in order to communicate with their friends.
+2. Try Teaching Each Language: The code then iterates through each language from 1 to n. For each language, it counts how many users in the `users_to_teach` set do not know that language. 
+This count represents the number of users that would need to be taught that particular language. The minimum count across all languages is tracked using the variable `min_users_to_teach`.
+Finally, the function returns the minimum number of users that need to be taught a language so that all friends can communicate.
+The time complexity of this solution is O(f * l + n * u), where f is the number of friendships, l is the average number of languages known per user, n is the number of languages, and u is the number of users who need to be taught. 
+The space complexity is O(u), where u is the number of users who need to be taught, due to the storage of the `users_to_teach` set.
 """
