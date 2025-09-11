@@ -8,7 +8,32 @@ Return the resulting string.
 The vowels are 'a', 'e', 'i', 'o', and 'u', and they can appear in lowercase or uppercase. Consonants comprise all letters that are not vowels.
 """
 
+class Solution:
+    def sortVowels(self, s: str) -> str:
+        VOWELS = ['a', 'A', 'e', 'E', 'i', 'I', 'o', 'O', 'u', 'U']
+        vowels = []
+        res = []
 
+        for c in s:
+            if c in VOWELS:
+                vowels.append(c)
+                res.append('_')
+            else:
+                res.append(c)
+        
+        vowels.sort()
+        
+        j = 0
+        if vowels:
+            for i in range(len(res)):
+                if j == len(vowels):
+                    break
+                
+                if res[i] == '_':
+                    res[i] = vowels[j]
+                    j += 1
+
+        return "".join(res)
 
 """
 
