@@ -36,5 +36,13 @@ class Solution:
         return "".join(res)
 
 """
-
+This code defines a solution to sort the vowels in a given string while keeping the consonants in their original positions. The function `sortVowels` takes a string `s` as input and returns a new string `t` where all consonants remain in their original places, and the vowels are sorted in nondecreasing order of their ASCII values.
+The approach used in this solution can be broken down into the following steps:
+1. Define a list `VOWELS` containing all the vowels (both lowercase and uppercase).
+2. Initialize an empty list `vowels` to store the vowels found in the input string and an empty list `res` to build the resulting string.
+3. Iterate through each character `c` in the input string `s`. If `c` is a vowel (i.e., it is in the `VOWELS` list), append it to the `vowels` list and append a placeholder (underscore '_') to the `res` list. If `c` is a consonant, append it directly to the `res` list.
+4. Sort the `vowels` list to arrange the vowels in nondecreasing order of their ASCII values.
+5. Initialize a pointer `j` to track the position in the `vowels` list. Iterate through the `res` list, and whenever a placeholder ('_') is encountered, replace it with the next vowel from the sorted `vowels` list and increment the pointer `j`.
+6. Finally, join the `res` list into a single string and return it.
+The time complexity of this solution is O(n log n) due to the sorting step, where n is the number of vowels in the string. The space complexity is O(n) for storing the vowels and the resulting string.
 """
