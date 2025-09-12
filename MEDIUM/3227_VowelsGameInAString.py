@@ -15,7 +15,7 @@ The English vowels are: a, e, i, o, and u.
 class Solution:
     def doesAliceWin(self, s: str) -> bool:
         for c in s:
-            if c in ['a','e','i','o','u']:
+            if c in 'aeiou':
                 return True
         return False
 
