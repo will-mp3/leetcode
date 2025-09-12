@@ -20,6 +20,7 @@ class Solution:
         return False
 
 """
+This problem is stupid btw.
 This code defines a solution to determine the winner of a game played by Alice and Bob on a given string `s`. The game involves removing substrings based on the number of vowels they contain, with Alice starting first. The function `doesAliceWin` takes a string `s` as input and returns `True` if Alice wins the game and `False` otherwise.
 The approach used in this solution is straightforward:
 1. The function iterates through each character `c` in the string `s`.
