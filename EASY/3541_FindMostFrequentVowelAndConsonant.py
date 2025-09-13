@@ -12,7 +12,20 @@ Note: If multiple vowels or consonants have the same maximum frequency, you may 
 The frequency of a letter x is the number of times it occurs in the string.
 """
 
-
+class Solution:
+    def maxFreqSum(self, s: str) -> int:
+        vowel, cons = defaultdict(int), defaultdict(int)
+        for c in s:
+            if c in 'aeiou':
+                vowel[c] += 1
+            else:
+                cons[c] += 1
+        res = 0
+        if vowel.values():
+             res += max(vowel.values())
+        if cons.values(): 
+            res += max(cons.values())
+        return res
 
 """
 
