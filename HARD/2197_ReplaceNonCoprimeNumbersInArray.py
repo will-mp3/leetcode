@@ -12,7 +12,19 @@ The test cases are generated such that the values in the final array are less th
 Two values x and y are non-coprime if GCD(x, y) > 1 where GCD(x, y) is the Greatest Common Divisor of x and y.
 """
 
+class Solution:
+    def replaceNonCoprimes(self, nums: List[int]) -> List[int]:
+        stack = []
 
+        for num in nums:
+            while stack:
+                g = gcd(stack[-1], num)
+                if g == 1:
+                    break
+                num = (stack.pop() * num) // g
+            stack.append(num)
+
+        return stack
 
 """
 
