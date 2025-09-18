@@ -47,5 +47,13 @@ class TaskManager(object):
         return -1
 
 """
-
+This code defines a TaskManager class that manages tasks associated with users and their priorities. The class supports adding, editing, removing, and executing tasks based on their priority. 
+The implementation uses a max-heap (simulated using a min-heap with negative values) to efficiently retrieve the task with the highest priority. The class maintains two dictionaries to track the priority and owner of each task. 
+The execTop method ensures that only valid tasks are executed by checking the current priority against the stored priority.
+The time complexity for each operation is as follows:
+- add: O(log n) due to heap insertion
+- edit: O(log n) due to heap insertion
+- rmv: O(1) for dictionary update
+- execTop: O(log n) in the worst case, as it may need to pop multiple elements from the heap to find a valid task
+The space complexity is O(n) for storing the tasks in the heap and dictionaries, where n is the number of tasks.
 """
