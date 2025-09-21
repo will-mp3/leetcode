@@ -62,5 +62,12 @@ class MovieRentingSystem:
         return [[shop, movie] for price, shop, movie in rented_list[:5]]
 
 """
-
+This code defines a MovieRentingSystem class that manages movie rentals across multiple shops. The system supports searching for available movies, renting and dropping movies, and reporting the cheapest rented movies. The implementation uses dictionaries and sets to efficiently track available and rented movies, ensuring that operations like search, rent, drop, and report are performed in a time-efficient manner.
+The time complexity for each operation is as follows:
+- Initialization: O(m log m) where m is the number of entries, due to sorting the shops for each movie.
+- Search: O(k) where k is the number of shops for the given movie, but it stops early after finding 5 available shops.
+- Rent: O(1) for adding to the rented set.
+- Drop: O(1) for removing from the rented set.
+- Report: O(r log r) where r is the number of currently rented movies, due to sorting the rented list.
+The space complexity is O(m + r) where m is the number of entries and r is the number of currently rented movies, for storing the available movies and rented movies.
 """
