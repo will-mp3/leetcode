@@ -27,5 +27,11 @@ class Solution:
         return 0
 
 """
-
+This code defines a solution to compare two version strings, `version1` and `version2`. The function `compareVersion` takes two strings as input and returns an integer indicating the comparison result: -1 if `version1` is less than `version2`, 1 if `version1` is greater than `version2`, and 0 if they are equal. The approach used in this solution can be broken down into the following steps:
+1. Split both version strings by the dot '.' character to obtain lists of revision numbers, `nums1` and `nums2`.
+2. Determine the lengths of both lists, `n1` and `n2`.
+3. Iterate through the range of the maximum length of the two lists. For each index `i`, retrieve the corresponding revision number from each list, converting it to an integer. If one list is shorter, treat the missing revision as 0.
+4. Compare the two revision numbers. If they are not equal, return 1 if the revision from `version1` is greater, or -1 if it is less.
+5. If the loop completes without finding any differences, return 0, indicating that the two version strings are equal.
+The time complexity of this solution is O(m + n), where m and n are the lengths of the two version strings, as it requires a single pass through the revisions of both versions. The space complexity is O(m + n) as well, due to the storage of the split revision lists.
 """
