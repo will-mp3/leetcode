@@ -26,5 +26,12 @@ class Solution:
         return self.dp[i][j]
 
 """
-
+This code defines a solution to find the minimum possible score of triangulating a convex polygon with given vertex values. The function `minScoreTriangulation` takes a list of integers `values` representing the vertex values of the polygon and returns an integer representing the minimum score achievable through triangulation. The approach used in this solution can be broken down into the following steps:
+1. Initialize a 2D list `dp` to store the minimum scores for subproblems, where `dp[i][j]` represents the minimum score for triangulating the polygon formed by vertices from index `i` to index `j`.
+2. Define the recursive function `minScoreTriangulation` with parameters `i` and `j` representing the current segment of the polygon being considered. If `j` is not provided, it is set to the last index of the `values` list.
+3. If the value for `dp[i][j]` has already been computed (i.e., it is not zero), return that value to avoid redundant calculations.
+4. Iterate through all possible vertices `k` between `i` and `j` to form triangles. For each vertex `k`, calculate the score of the triangle formed by vertices `i`, `k`, and `j`, and recursively compute the minimum scores for the two resulting sub-polygons: one from `i` to `k` and the other from `k` to `j`.
+5. Update the result `res` with the minimum score found during the iterations.
+6. Store the computed minimum score in `dp[i][j]` and return it.
+The time complexity of this solution is O(n^3), where n is the number of vertices in the polygon, due to the three nested loops (one for the range of `i` to `j` and two for the recursive calls). The space complexity is O(n^2) for storing the `dp` table.
 """
