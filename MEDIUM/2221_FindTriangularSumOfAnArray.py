@@ -10,7 +10,15 @@ Repeat the entire process starting from step 1.
 Return the triangular sum of nums.
 """
 
+class Solution:
+    def triangularSum(self, nums: List[int]) -> int:
+        while len(nums) > 1:
+            copy = []
+            for i in range(len(nums) - 1):
+                copy.append((nums[i] + nums[i + 1]) % 10)
+            nums = copy
 
+        return nums[0]
 
 """
 
