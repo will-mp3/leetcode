@@ -20,5 +20,8 @@ class Solution:
         return dummy.next
 
 """
-
+This solution first converts the array of integers into a set for O(1) look-up times. 
+It then iterates through the linked list, adding nodes to a new linked list only if their values are not present in the set. 
+Finally, it returns the head of the newly constructed linked list.
+This soplution runs in O(N + M) time complexity, where N is the length of the linked list and M is the length of the array.
 """
