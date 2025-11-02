@@ -27,5 +27,8 @@ class Solution:
         return total
 
 """
-
+This solution first initializes a grid and marks the positions of walls and guards. 
+It then iterates through each guard and explores the four cardinal directions, marking cells as guarded until it encounters a wall or another guard. 
+The total number of unguarded cells is updated accordingly and returned at the end.
+The time complexity of this solution is O(G * (R + C)), where G is the number of guards, R is the number of rows, and C is the number of columns in the grid.
 """
