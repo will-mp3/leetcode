@@ -6,7 +6,25 @@ A guard can see every cell in the four cardinal directions (north, east, south, 
 Return the number of unoccupied cells that are not guarded.
 """
 
-
+class Solution:
+    def countUnguarded(self, R: int, C: int, guards: List[List[int]], walls: List[List[int]]) -> int:
+        # create 2d grid
+        grid = [[0] * C for _ in range(R)]
+        total = R * C
+        # mark walls and guards
+        for r,c in walls + guards:
+            grid[r][c] = 2
+            total -= 1
+        # for each guard search 4 directions and mark what it sees, if a guard/wall is seen stop
+        for x,y in guards:
+            for dr,dc in (0,1),(1,0),(0,-1),(-1,0):
+                r,c = x + dr,y + dc
+                while C > c >= 0 <= r < R and grid[r][c] != 2:
+                    total -= grid[r][c] == 0
+                    grid[r][c] = 1
+                    r += dr
+                    c += dc
+        return total
 
 """
 
