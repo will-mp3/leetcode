@@ -24,5 +24,8 @@ class Solution:
         return sum_
 
 """
-
+This solution iterates through the string of balloon colors, identifying consecutive balloons of the same color. 
+For each group of consecutive balloons with the same color, it calculates the total time needed to remove all but the one with the maximum removal time, which is kept. 
+The total removal time is accumulated and returned at the end.
+The time complexity of this solution is O(N), where N is the length of the colors string.
 """
