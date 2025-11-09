@@ -20,5 +20,8 @@ class Solution:
         return res
 
 """
-
+This solution implements a straightforward approach to count the number of operations required to reduce either num1 or num2 to zero. 
+It uses a while loop that continues as long as both num1 and num2 are non-zero. 
+In each iteration, it checks which number is larger and subtracts the smaller number from the larger one, incrementing the operation count each time. 
+The process continues until one of the numbers becomes zero, at which point the function returns the total count of operations performed.
 """
