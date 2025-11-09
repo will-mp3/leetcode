@@ -23,5 +23,8 @@ class Solution:
         return ans
 
 """
-
+This solution iterates through all possible k-length subarrays of the input array nums. For each subarray, it counts the occurrences of each element using a Counter. 
+It then sorts the elements based on their frequency (and value in case of ties) and calculates the x-sum by summing the top x most frequent elements. 
+The results are collected in a list and returned at the end.
+The time complexity of this solution is O((n - k + 1) * (k + m log m)), where n is the length of nums, k is the length of the subarray, and m is the number of distinct elements in each subarray.
 """
