@@ -21,5 +21,8 @@ class Solution:
         return res
 
 """
-
+This solution uses a stack to keep track of the distinct non-zero integers in the array as we iterate through it. 
+Each time we encounter a new minimum integer that is greater than the last one in the stack, we increment our operation count. 
+If we find an integer smaller than the last one in the stack, we pop elements from the stack until we find a suitable position for the new integer. 
+This ensures that we only count necessary operations to convert all elements to zero.  
 """
