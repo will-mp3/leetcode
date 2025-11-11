@@ -33,5 +33,9 @@ class Solution:
         return max(dp.values())
 
 """
-
+This solution uses dynamic programming with a dictionary to keep track of the maximum subset size for each combination of 0's and 1's used so far. 
+Each time we process a new string, we calculate the number of 0's and 1's it contains, 
+and then we update our dp dictionary with new combinations that can be formed by including this string. 
+Finally, we return the maximum value from the dp dictionary, 
+which represents the size of the largest subset that can be formed with the given constraints.
 """
