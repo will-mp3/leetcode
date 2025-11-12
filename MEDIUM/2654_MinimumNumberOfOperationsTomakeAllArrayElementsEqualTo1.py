@@ -25,5 +25,7 @@ class Solution:
         return res + n - 1
 
 """
-
+This solution first checks if there are any 1's in the array. 
+If there are, it calculates the minimum number of operations needed to make all elements equal to 1 by subtracting the count of 1's from the total length of the array. 
+If there are no 1's, it iterates through all possible subarrays to find the shortest
 """
