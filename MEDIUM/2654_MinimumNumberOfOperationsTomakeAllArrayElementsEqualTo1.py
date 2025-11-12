@@ -7,7 +7,22 @@ Return the minimum number of operations to make all elements of nums equal to 1.
 The gcd of two integers is the greatest common divisor of the two integers.
 """
 
+class Solution:
+    def minOperations(self, nums: List[int]) -> int:
+        n = len(nums)
+        ones = nums.count(1)
+        if ones: return n - ones
+        
+        res = inf
+        for i in range(n):
+            g = nums[i]
+            for j in range(i + 1, n):
+                g = gcd(g, nums[j])
+                if g == 1:
+                    res = min(res, j - i)
 
+        if res == inf: return -1
+        return res + n - 1
 
 """
 
