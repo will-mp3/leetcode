@@ -1,0 +1,9 @@
+"""
+Given an binary array nums and an integer k, return true if all 1's are at least k places away from each other, otherwise return false.
+"""
+
+
+
+"""
+
+"""
