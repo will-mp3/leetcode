@@ -21,5 +21,7 @@ class Solution:
     return True
 
 """
-
+This solution iterates through the binary array while maintaining a count of zeros between consecutive 1's. 
+When a 1 is encountered, it checks if the count of zeros since the last 1 is at least k. 
+If not, it returns False. If the loop completes without finding any violations, it returns True. 
 """
