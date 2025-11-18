@@ -17,5 +17,8 @@ class Solution:
         return i == n - 1
 
 """
-
+This solution iterates through the bits array, using a pointer to track the current position. 
+It moves the pointer based on whether it encounters a 0 (one-bit character) or a 1 (two-bit character). 
+The loop continues until the pointer reaches the second-to-last bit. 
+Finally, it checks if the pointer is at the last bit to determine if the last character is a one-bit character.  
 """
