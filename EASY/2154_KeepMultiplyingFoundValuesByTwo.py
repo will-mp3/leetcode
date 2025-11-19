@@ -9,7 +9,14 @@ Repeat this process with the new number as long as you keep finding the number.
 Return the final value of original.
 """
 
-
+class Solution:
+    def findFinalValue(self, nums: List[int], original: int) -> int:
+        nums = set(nums)
+        while True:
+          if original in nums:
+            original = original * 2
+          else:
+            return original
 
 """
 
