@@ -19,5 +19,8 @@ class Solution:
             return original
 
 """
-
+This solution first converts the input list nums into a set for O(1) average-time complexity lookups. 
+It then enters a loop where it checks if the current value of original is present in the set. 
+If it is found, original is doubled. 
+If not, the loop breaks and the final value of original is returned. 
 """
