@@ -7,7 +7,32 @@ For example, if intervals = [[1,3], [3,7], [8,9]], then [1,2,4,7,8,9] and [2,3,4
 Return the minimum possible size of a containing set.
 """
 
+class Solution:
+    def intersectionSizeTwo(self, intervals: List[List[int]]) -> int:
+        intervals.sort(key=lambda x: (x[1], -x[0]))
+        
+        nums = []
+        res = 0
 
+        for interval in intervals:
+          start, end = interval[0], interval[1]
+          count = 0
+
+          for i in range(len(nums) - 1, -1, -1):
+            if nums[i] >= start and nums[i] <= end:
+              count += 1
+              if count == 2:
+                break
+          
+          if count == 0:
+            nums.append(end - 1)
+            nums.append(end)
+            res += 2
+          elif count == 1:
+            nums.append(end)
+            res += 1
+        
+        return res
 
 """
 
