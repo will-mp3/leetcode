@@ -35,5 +35,9 @@ class Solution:
         return res
 
 """
-
+This solution first sorts the intervals based on their end values (and start values in descending order for tie-breaking). 
+It then iterates through each interval, checking how many numbers from the current containing set (nums) fall within the interval. 
+If none are found, it adds the two largest possible numbers from the interval to nums. 
+If one number is found, it adds the largest possible number from the interval. 
+The result (res) keeps track of the total numbers added to the containing set, which is returned at the end.
 """
