@@ -13,5 +13,8 @@ class Solution:
         return res
 
 """
-
+This solution iterates through each number in the input array nums. For each number, it checks the remainder when divided by 3. 
+If the remainder is not zero, it calculates the minimum operations needed to make that number divisible by 3, 
+which is either adding or subtracting the remainder or subtracting the remainder from 3. 
+The total operations are accumulated in the variable res, which is returned at the end.
 """
