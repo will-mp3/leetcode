@@ -16,5 +16,8 @@ class Solution:
         return nums
 
 """
-
+This solution iterates through the binary array nums, maintaining a running value val that represents the decimal equivalent of the binary number formed by the subarray nums[0..i]. 
+For each bit in the array, it shifts the current value left by one (equivalent to multiplying by 2) and adds the current bit. 
+To prevent overflow and keep the computation efficient, it takes the modulo 5 of the value at each step. 
+Finally, it checks if the current value is divisible by 5 and updates the nums array with boolean values accordingly, which is returned at the end.
 """
