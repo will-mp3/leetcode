@@ -10,5 +10,7 @@ class Solution:
         return sum(nums) % k
 
 """
-
+This solution calculates the sum of all elements in the input array nums and then computes the remainder when this sum is divided by k using the modulo operator (%). 
+The result represents the minimum number of operations needed to make the sum divisible by k, as each operation reduces the sum by 1. 
+The computed value is returned as the final result.
 """
