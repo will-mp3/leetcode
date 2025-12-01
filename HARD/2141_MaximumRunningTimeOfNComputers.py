@@ -22,5 +22,10 @@ class Solution:
         return live[-1] + extra // n
 
 """
-
+This solution first sorts the battery capacities and separates the largest n batteries to power the n computers. 
+It then calculates the total extra capacity from the remaining batteries. 
+The algorithm iterates through the n largest batteries, checking if the extra capacity can equalize the current battery to the next one. 
+If it can, it adjusts the extra capacity accordingly; 
+if not, it calculates the maximum possible runtime based on the current battery level and the remaining extra capacity. 
+Finally, if all batteries can be equalized, it returns the maximum runtime based on the last battery and any remaining extra capacity.  
 """
