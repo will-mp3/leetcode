@@ -8,7 +8,19 @@ Return the number of unique horizontal trapezoids that can be formed by choosing
 Since the answer may be very large, return it modulo 109 + 7.
 """
 
+class Solution:
+    def countTrapezoids(self, points: List[List[int]]) -> int:
+        MOD = 10**9+7
+        freq = Counter(p[1] for p in points)
+        Sum, c2 = 0, 0
 
+        for f in freq.values():
+            if f <= 1:
+                continue
+            c = f * (f - 1) // 2
+            Sum += c
+            c2 += c * c
+        return (Sum * Sum - c2) // 2 % MOD
 
 """
 
