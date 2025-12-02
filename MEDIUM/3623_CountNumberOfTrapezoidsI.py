@@ -23,5 +23,9 @@ class Solution:
         return (Sum * Sum - c2) // 2 % MOD
 
 """
-
+This solution works by first counting the frequency of points at each y-coordinate. 
+For each y-coordinate with at least two points, we calculate the number of ways to choose two points (which forms a horizontal line segment). 
+We then use these counts to compute the total number of unique horizontal trapezoids that can be formed 
+by selecting pairs of horizontal segments from different y-coordinates. 
+The final result is computed using combinatorial principles and returned modulo 10^9 + 7.
 """
