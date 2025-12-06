@@ -17,5 +17,8 @@ class Solution:
         return res
 
 """
-
+This solution iterates through all possible partition indices in the given array. 
+For each partition index, it calculates the sum of the left and right subarrays and checks if their difference is even. 
+If it is, the result counter is incremented. 
+Finally, the total count of valid partitions is returned.  
 """
