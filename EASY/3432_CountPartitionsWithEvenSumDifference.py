@@ -8,7 +8,13 @@ Right subarray contains indices [i + 1, n - 1].
 Return the number of partitions where the difference between the sum of the left and right subarrays is even.
 """
 
-
+class Solution:
+    def countPartitions(self, nums: List[int]) -> int:
+        res = 0
+        for i in range(len(nums) - 1):
+            if (sum(nums[:i + 1]) - sum(nums[i + 1:])) % 2 == 0:
+                res += 1
+        return res
 
 """
 
