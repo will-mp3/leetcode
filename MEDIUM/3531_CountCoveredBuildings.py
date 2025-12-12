@@ -30,5 +30,8 @@ class Solution:
         return ans
 
 """
-
+This solution first determines the extreme positions (minimum and maximum coordinates) of buildings in each row and column.
+It then iterates through each building to check if it is strictly inside the extreme positions in both its row and column.
+If it is, the building is considered covered, and the count is incremented. Finally, the total count of covered buildings is returned.
+The time complexity of this solution is O(b), where b is the number of buildings, since we make a single pass to determine extremes and another pass to count covered buildings.
 """
